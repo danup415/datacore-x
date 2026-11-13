@@ -1,0 +1,13 @@
+step,signal,response,final_change,settling_min,overshoot_pct,peak_deviation
+IT load +20 %,Tchws,regulated,0,0,NaN,0
+IT load +20 %,Tsup (mean),regulated,-2.55795384873636e-13,0,NaN,0.00203986468114792
+IT load +20 %,max inlet,regulated,0,1,NaN,0.339976673536377
+IT load +20 %,facility kW,tracked,14.313912179455,0.833333333333333,2.53759728274645e-10,14.3139121794913
+CHW supply SP 18 -> 20 C,Tchws,tracked,1.99999999999989,4,1.77635683940035e-13,1.99999999999989
+CHW supply SP 18 -> 20 C,Tsup (mean),regulated,-2.52242671194836e-13,3.83333333333333,NaN,0.403460904543635
+CHW supply SP 18 -> 20 C,max inlet,regulated,0,0,NaN,0.0458050019628935
+CHW supply SP 18 -> 20 C,facility kW,tracked,-1.71284803338706,5.33333333333333,79.5480095739631,3.07538455097324
+Supply-air SP 22 -> 23 C,Tchws,regulated,0,0,NaN,0
+Supply-air SP 22 -> 23 C,Tsup (mean),tracked,0.999999999999748,1.66666666666667,0.146683624072745,1.00146683624047
+Supply-air SP 22 -> 23 C,max inlet,regulated,0,0,NaN,0.0944057480299385
+Supply-air SP 22 -> 23 C,facility kW,regulated,-0.332915881677124,1.33333333333333,NaN,0.521352004566822

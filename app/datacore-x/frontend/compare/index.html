@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DATACORE-X · Controller comparison</title>
+<style>
+  :root{--bg:#E3E5E8;--panel:#FFFFFF;--border:#C9CDD2;--head:#F1F2F4;--text:#1F2328;--muted:#5E6670;
+        --accent:#2F5A86;--warn:#B7791F;--alarm:#B42318;--ok:#2E7D4F;--grid:#E6E8EB;}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
+    font:13px 'Segoe UI','Noto Sans',Arial,sans-serif;font-variant-numeric:tabular-nums}
+  .wrap{display:flex;flex-direction:column;height:100%;padding:4px;gap:4px}
+  .panel{background:var(--panel);border:1px solid var(--border);border-radius:2px}
+  .bar{display:flex;align-items:center;gap:8px;padding:8px 10px;flex-wrap:wrap}
+  .bar .title{font-weight:600;font-size:14px;margin-right:6px}
+  .seg{display:inline-flex;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+  .seg button{border:0;border-right:1px solid var(--border);background:var(--panel);padding:0 12px;height:30px;
+    font:inherit;color:var(--text);cursor:pointer}
+  .seg button:last-child{border-right:0}
+  .seg button.on{background:var(--head);font-weight:600}
+  .btn{border:1px solid var(--border);background:var(--panel);height:30px;padding:0 14px;border-radius:2px;font:inherit;cursor:pointer;color:var(--text)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;min-width:84px}
+  .clock{font-weight:600;min-width:150px}
+  input[type=range]{flex:1;min-width:160px;accent-color:var(--accent)}
+  .muted{color:var(--muted)}
+  .cols{display:flex;gap:4px;flex:1;min-height:0}
+  .col{flex:1;display:flex;flex-direction:column;min-width:0}
+  .col h2{margin:0;font-size:13px;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:10px}
+  .col h2 .sub{font-weight:400;color:var(--muted);font-size:12px}
+  .body{padding:8px 10px;display:flex;flex-direction:column;gap:8px;flex:1;min-height:0;overflow:auto}
+  .outcome{padding:10px 12px;border-radius:2px;border:1px solid var(--border);background:var(--head);font-weight:600;min-height:44px;display:flex;align-items:center}
+  .outcome.alarm{background:#FBEAE8;border-color:#E4A39C;color:var(--alarm)}
+  .outcome.warn{background:#FBF3E6;border-color:#E5C48F;color:#8A5A12}
+  .outcome.ok{background:#EAF4EE;border-color:#A9CDB6;color:var(--ok)}
+  .assets{display:flex;gap:6px}
+  .asset{flex:1;border:1px solid var(--border);border-radius:2px;padding:6px 8px}
+  .asset .n{font-size:12px;color:var(--muted)}
+  .asset .s{font-weight:600}
+  .asset.run .s{color:var(--text)} .asset.stby .s{color:var(--muted);font-weight:400}
+  .asset.trip{border-color:#E4A39C;background:#FBEAE8} .asset.trip .s{color:var(--alarm)}
+  .asset.deg .s{color:var(--warn)}
+  canvas{width:100%;height:150px;display:block}
+  .chart .cap{font-size:12px;color:var(--muted);margin-bottom:2px;display:flex;justify-content:space-between}
+  .log{border-top:1px solid var(--head);padding-top:6px;font-size:12px;min-height:90px}
+  .log div{padding:2px 0;border-bottom:1px solid var(--head)}
+  .log .tm{display:inline-block;width:48px;color:var(--muted)}
+  .log .a{color:var(--alarm);font-weight:600} .log .w{color:var(--warn);font-weight:600} .log .g{color:var(--ok);font-weight:600}
+  table{border-collapse:collapse;width:100%}
+  th,td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--head);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{background:var(--head);color:var(--muted);font-size:12px;font-weight:600}
+  td.bad{color:var(--alarm);font-weight:600} td.good{color:var(--ok);font-weight:600}
+  .foot{font-size:12px;color:var(--muted);padding:6px 10px}
+  .hidden{visibility:hidden}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="panel bar">
+    <span class="title">Same plant, same fault, two controllers</span>
+    <span class="seg" id="scen">
+      <button data-s="pump" class="on">Pump bearing failure</button>
+      <button data-s="chiller">Chiller degradation</button>
+    </span>
+    <button class="btn primary" id="play">Play</button>
+    <button class="btn" id="reset">Restart</button>
+    <span class="seg" id="speed">
+      <button data-v="1">1×</button><button data-v="2" class="on">2×</button><button data-v="4">4×</button>
+    </span>
+    <input type="range" id="slider" min="0" max="359" value="0">
+    <span class="clock" id="clock">11:00</span>
+  </div>
+
+  <div class="cols">
+    <div class="col panel" id="colA">
+      <h2>Conventional EMPC <span class="sub">energy-optimal, but blind to equipment health</span></h2>
+      <div class="body">
+        <div class="outcome" data-k="outcome">Running normally</div>
+        <div class="assets" data-k="assets"></div>
+        <div class="chart"><div class="cap"><span data-k="c1t"></span><span data-k="c1v"></span></div><canvas data-k="c1"></canvas></div>
+        <div class="chart"><div class="cap"><span data-k="c2t"></span><span data-k="c2v"></span></div><canvas data-k="c2"></canvas></div>
+        <div class="log" data-k="log"></div>
+      </div>
+    </div>
+    <div class="col panel" id="colB">
+      <h2>PI-HA-EMPC <span class="sub">this project: same optimiser + live Health Index and RUL</span></h2>
+      <div class="body">
+        <div class="outcome" data-k="outcome">Running normally</div>
+        <div class="assets" data-k="assets"></div>
+        <div class="chart"><div class="cap"><span data-k="c1t"></span><span data-k="c1v"></span></div><canvas data-k="c1"></canvas></div>
+        <div class="chart"><div class="cap"><span data-k="c2t"></span><span data-k="c2v"></span></div><canvas data-k="c2"></canvas></div>
+        <div class="log" data-k="log"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <table id="summary"></table>
+    <div class="foot" id="foot"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+const C = {text:'#1F2328', muted:'#5E6670', grid:'#E6E8EB', line:'#2F5A86', ghost:'#C9CDD2',
+           warn:'#B7791F', alarm:'#B42318', ok:'#2E7D4F', zoneC:'rgba(183,121,31,0.10)', zoneD:'rgba(180,35,24,0.10)'};
+let D = null, scen = 'pump', k = 0, playing = false, speed = 2, timer = null, last = 0;
+const N = () => D[scen].empc.t_min.length;
+const hhmm = m => { const t = 11*60 + Math.round(m); return String(Math.floor(t/60)%24).padStart(2,'0') + ':' + String(t%60).padStart(2,'0'); };
+
+// ------------------------------------------------------------------ events
+function events(r, s) {
+  const ev = [], t = r.t_min, n = t.length;
+  if (s === 'pump') {
+    let zc = false, zd = false, hiWarn = false;
+    for (let i = 1; i < n; i++) {
+      for (let p = 0; p < 3; p++) {
+        const name = 'P-0' + (p+1);
+        if (r.pump_trip[i][p] && !r.pump_trip[i-1][p]) {
+          const onDuty = r.pump_run[i-1][p] > 0;
+          ev.push({i, cls: onDuty ? 'a' : 'w', txt: onDuty ? `${name} TRIPPED while on duty (vibration ${r.vib[i-1][p].toFixed(1)} mm/s): unplanned failure`
+                                                         : `${name} bearing failure point reached: pump already isolated, no impact`, trip: onDuty});
+        } else if (!r.pump_run[i][p] && r.pump_run[i-1][p] && !r.pump_trip[i][p]) {
+          ev.push({i, cls: 'g', txt: `Planned changeover: ${name} stopped for maintenance`, plan: true});
+        }
+        if (r.pump_run[i][p] && !r.pump_run[i-1][p]) ev.push({i, cls: '', txt: `${name} started`});
+      }
+      const v = r.pump_run[i][0] ? r.vib[i][0] : 0;
+      if (!zc && v >= 4.5) { zc = true; ev.push({i, cls: 'w', txt: 'P-01 vibration in ISO 10816 zone C (≥ 4.5 mm/s)'}); }
+      if (!zd && v >= 7.1) { zd = true; ev.push({i, cls: 'a', txt: 'P-01 vibration in zone D (≥ 7.1 mm/s)'}); }
+      const hi = r.pump_hi[i] ? r.pump_hi[i][0] : null;
+      if (!hiWarn && hi !== null && hi < 50 && r.pump_run[i][0]) { hiWarn = true; ev.push({i, cls: 'w', txt: `P-01 Health Index ${hi.toFixed(0)} / 100${r.pump_rul_min[i] ? ', RUL ≈ ' + r.pump_rul_min[i].toFixed(0) + ' min' : ''}`, hi: true}); }
+    }
+  } else {
+    let hiWarn = false, pc = false;
+    for (let i = 1; i < n; i++) {
+      for (let c = 0; c < 2; c++) {
+        const name = 'CH-0' + (c+1), duty = r.ch_load[i][c] > 5, was = r.ch_load[i-1][c] > 5;
+        if (r.ch_trip[i][c] && !r.ch_trip[i-1][c]) {
+          ev.push({i, cls: was ? 'a' : 'w', txt: was ? `${name} TRIPPED while carrying load: unplanned failure` : `${name} failure point reached: chiller already unloaded, no impact`, trip: was});
+        } else if (!duty && was) ev.push({i, cls: 'g', txt: `Planned lead transfer: ${name} unloaded`, plan: true});
+        if (duty && !was) {
+          const tr = ev.filter(e => e.trip).pop();
+          const gap = tr ? Math.round(t[i] - t[tr.i]) : 0;
+          ev.push({i, cls: gap > 0 ? 'a' : '', txt: gap > 0 ? `${name} took the load after ${gap} min with no chiller cooling (start-up delay)` : `${name} took the load`});
+        }
+      }
+      if (!hiWarn && r.chiller_hi[i] !== null && r.chiller_hi[i] < 60) { hiWarn = true; ev.push({i, cls: 'w', txt: `CH-01 Health Index ${r.chiller_hi[i].toFixed(0)} / 100 (COP falling)`, hi: true}); }
+      if (r.precool[i] && !pc && (pc = true)) ev.push({i, cls: 'w', txt: 'Pre-cooling: setpoints lowered to build thermal margin'});
+    }
+  }
+  return ev;
+}
+
+// ------------------------------------------------------------------ charts
+function chart(cv, series, i, opt) {
+  const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+  if (cv.width !== W*dpr || cv.height !== H*dpr) { cv.width = W*dpr; cv.height = H*dpr; }
+  const g = cv.getContext('2d'); g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,W,H);
+  const L = 34, R = 8, T = 6, B = 18, w = W-L-R, h = H-T-B, n = series[0].y.length;
+  const X = j => L + w*j/(n-1), Y = v => T + h*(1 - (v-opt.min)/(opt.max-opt.min));
+  (opt.bands||[]).forEach(b => { g.fillStyle = b.c; g.fillRect(L, Y(Math.min(b.hi,opt.max)), w, Y(b.lo)-Y(Math.min(b.hi,opt.max))); });
+  g.strokeStyle = C.grid; g.lineWidth = 1; g.fillStyle = C.muted; g.font = '11px Segoe UI, Arial';
+  opt.ticks.forEach(v => { g.beginPath(); g.moveTo(L, Y(v)); g.lineTo(L+w, Y(v)); g.stroke(); g.textAlign='right'; g.fillText(v, L-4, Y(v)+4); });
+  for (let m = 0; m <= 360; m += 60) { const x = L + w*m/360; g.textAlign = m === 0 ? 'left' : m === 360 ? 'right' : 'center'; g.fillText(hhmm(m), m === 0 ? L - 6 : x, H-4); }
+  (opt.lines||[]).forEach(l => { g.strokeStyle = l.c; g.setLineDash([4,3]); g.beginPath(); g.moveTo(L, Y(l.v)); g.lineTo(L+w, Y(l.v)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = l.c; g.textAlign = 'left'; g.fillText(l.t, L+4, Y(l.v)-3); });
+  series.forEach(s => {
+    const draw = (from, to, col, width) => { g.strokeStyle = col; g.lineWidth = width; g.setLineDash(s.dash || []); g.beginPath(); let pen = false;
+      for (let j = from; j <= to; j++) { const v = s.y[j]; if (v === null || v === undefined || isNaN(v)) { pen = false; continue; }
+        const x = X(j), y = Y(Math.max(opt.min, Math.min(opt.max, v))); pen ? g.lineTo(x,y) : g.moveTo(x,y); pen = true; } g.stroke(); };
+    draw(0, i, s.c || C.line, s.w || 1.8); g.setLineDash([]);
+  });
+  g.strokeStyle = C.muted; g.lineWidth = 1; g.beginPath(); g.moveTo(X(i), T); g.lineTo(X(i), T+h); g.stroke();
+}
+
+// ------------------------------------------------------------------ render
+const cols = {empc: document.getElementById('colA'), haempc: document.getElementById('colB')};
+const q = (el, key) => el.querySelector(`[data-k="${key}"]`);
+let EV = {};
+
+function render() {
+  const n = N(); k = Math.max(0, Math.min(n-1, k));
+  document.getElementById('slider').max = n-1; document.getElementById('slider').value = k;
+  document.getElementById('clock').textContent = 'Sim time ' + hhmm(D[scen].empc.t_min[k]);
+  for (const m of ['empc','haempc']) {
+    const r = D[scen][m], el = cols[m], ev = EV[m].filter(e => e.i <= k);
+    // outcome
+    const trip = ev.find(e => e.trip), plan = ev.find(e => e.plan), hi = ev.find(e => e.hi);
+    const o = q(el, 'outcome');
+    if (trip) { o.className = 'outcome alarm'; o.textContent = `Unplanned failure at ${hhmm(r.t_min[trip.i])}: ${s1(scen)} tripped on duty`; }
+    else if (plan) { o.className = 'outcome ok'; o.textContent = `Planned ${scen === 'pump' ? 'pump changeover' : 'chiller lead transfer'} at ${hhmm(r.t_min[plan.i])}: failure avoided`; }
+    else if (hi) { o.className = 'outcome warn'; o.textContent = m === 'empc' ? 'Equipment degrading: controller does not see it' : 'Degradation detected: health estimate falling'; }
+    else { o.className = 'outcome'; o.textContent = 'Running normally'; }
+    // assets
+    const A = q(el, 'assets'); A.innerHTML = '';
+    if (scen === 'pump') for (let p = 0; p < 3; p++) {
+      const t = r.pump_trip[k][p], run = r.pump_run[k][p], v = r.vib[k][p];
+      const iso = !run && (t || ev.some(e => e.plan && e.txt.includes('P-0' + (p+1))));
+      const hard = t && ev.some(e => e.trip && e.txt.includes('P-0' + (p+1)));
+      const cls = hard ? 'trip' : run ? (v >= 4.5 ? 'deg' : 'run') : 'stby';
+      const st = hard ? 'TRIPPED' : run ? 'Running' : iso ? 'Isolated for repair' : 'Standby';
+      A.insertAdjacentHTML('beforeend', `<div class="asset ${cls}"><div class="n">P-0${p+1}</div><div class="s">${st}</div><div class="n">${run ? v.toFixed(1) + ' mm/s' : '&nbsp;'}</div></div>`);
+    } else for (let c = 0; c < 2; c++) {
+      const t = r.ch_trip[k][c], ld = r.ch_load[k][c];
+      const hard = t && ev.some(e => e.trip && e.txt.includes('CH-0' + (c+1)));
+      const iso = ld <= 5 && (t || ev.some(e => e.plan && e.txt.includes('CH-0' + (c+1))));
+      const cls = hard ? 'trip' : ld > 5 ? (c === 0 && r.chiller_hi[k] < 60 ? 'deg' : 'run') : 'stby';
+      A.insertAdjacentHTML('beforeend', `<div class="asset ${cls}"><div class="n">CH-0${c+1}</div><div class="s">${hard ? 'TRIPPED' : ld > 5 ? 'On duty' : iso ? 'Isolated for repair' : 'Standby'}</div><div class="n">${ld > 5 ? ld.toFixed(0) + ' kW' : '&nbsp;'}</div></div>`);
+    }
+    // charts
+    const tag = m === 'empc' ? ' (computed, not used)' : ' (used by the controller)';
+    if (scen === 'pump') {
+      q(el,'c1t').textContent = 'P-01 bearing vibration, mm/s'; q(el,'c1v').textContent = r.pump_run[k][0] ? r.vib[k][0].toFixed(2) + ' mm/s' : 'stopped';
+      chart(q(el,'c1'), [{y: r.vib.map((v,j) => r.pump_run[j][0] ? v[0] : null)}], k,
+        {min: 0, max: 8, ticks: [0,2,4,6,8], bands: [{lo:4.5, hi:7.1, c:C.zoneC}, {lo:7.1, hi:8, c:C.zoneD}],
+         lines: [{v:4.5, c:C.warn, t:'zone C 4.5'}, {v:7.1, c:C.alarm, t:'zone D 7.1'}]});
+      const h = deglitch(r.pump_hi.map((v, j) => v && r.pump_run[j][0] ? v[0] : null));
+      q(el,'c2t').textContent = 'P-01 Health Index' + tag; q(el,'c2v').textContent = h[k] !== null ? h[k].toFixed(0) + ' / 100' : '';
+      chart(q(el,'c2'), [{y: h, c: m === 'empc' ? C.ghost : C.line}], k,
+        {min: 0, max: 100, ticks: [0,25,50,75,100], lines: [{v:25, c:C.warn, t:'act at HI < 25 or RUL < 15 min'}]});
+    } else {
+      q(el,'c1t').textContent = 'Chiller load, kW (CH-01 solid, CH-02 dashed)'; q(el,'c1v').textContent = r.ch_load[k].map(x => x.toFixed(0)).join(' / ') + ' kW';
+      chart(q(el,'c1'), [{y: r.ch_load.map(v => v[0])}, {y: r.ch_load.map(v => v[1]), c: C.muted, dash: [5,3]}], k,
+        {min: 0, max: Math.ceil(Math.max(...D.chiller.empc.ch_load.flat(), ...D.chiller.haempc.ch_load.flat())/20)*20, ticks: [0,20,40,60,80].filter(v => v <= 100)});
+      q(el,'c2t').textContent = 'CH-01 Health Index' + tag; q(el,'c2v').textContent = r.ch_load[k][0] > 5 && r.chiller_hi[k] !== null ? r.chiller_hi[k].toFixed(0) + ' / 100' : 'not loaded';
+      chart(q(el,'c2'), [{y: deglitch(r.chiller_hi.map((v, j) => r.ch_load[j][0] > 5 ? v : null)), c: m === 'empc' ? C.ghost : C.line}], k,
+        {min: 0, max: 100, ticks: [0,25,50,75,100], lines: [{v:45, c:C.warn, t:'act at HI < 45 or RUL < 25 min'}]});
+    }
+    // log
+    q(el,'log').innerHTML = ev.slice(-5).reverse().map(e => `<div><span class="tm">${hhmm(r.t_min[e.i])}</span><span class="${e.cls}">${e.txt}</span></div>`).join('') || '<div class="muted">No events yet</div>';
+  }
+  summary();
+}
+const deglitch = a => a.map((v, j) => (v !== null && v > 95 && j > 0 && a[j-1] !== null && a[j-1] < 70) ? null : v);
+const s1 = s => s === 'pump' ? 'pump P-01' : 'chiller CH-01';
+
+function summary() {
+  const done = k >= N()-1;
+  const rows = [], A = D[scen].empc, B = D[scen].haempc;
+  const trips = r => EV[r === A ? 'empc' : 'haempc'].filter(e => e.trip).length;
+  const zc = r => r.vib.reduce((s,v,j) => s + (r.pump_run[j].some((x,p) => x && v[p] > 4.5) ? 1 : 0), 0);
+  const act = (r, m) => { const e = EV[m].find(x => x.plan); return e ? hhmm(r.t_min[e.i]) : 'none'; };
+  const trip = EV.empc.find(e => e.trip), plan = EV.haempc.find(e => e.plan);
+  const lead = trip && plan ? Math.round(A.t_min[trip.i] - B.t_min[plan.i]) : null;
+  rows.push(['Unplanned equipment trips', trips(A), trips(B), trips(B) < trips(A)]);
+  rows.push([scen === 'pump' ? 'Planned changeover' : 'Planned lead transfer', act(A,'empc'), act(B,'haempc') + (lead ? ` (${lead} min before failure)` : ''), true]);
+  if (scen === 'pump') rows.push(['Pump running in vibration zone C/D, min', zc(A), zc(B), zc(B) < zc(A)]);
+  rows.push(['Peak rack inlet, °C (limit 27)', Math.max(...A.max_inlet).toFixed(2), Math.max(...B.max_inlet).toFixed(2), null]);
+  rows.push(['Cooling energy over 6 h, kWh', A.cool_kwh.toFixed(1), B.cool_kwh.toFixed(1), null]);
+  rows.push(['Facility energy over 6 h, kWh', A.energy_kwh.toFixed(1), B.energy_kwh.toFixed(1), null]);
+  const t = document.getElementById('summary');
+  t.innerHTML = `<tr><th>Result over the 6 h run ${done ? '' : '(shown in full at the end of playback)'}</th><th>Conventional EMPC</th><th>PI-HA-EMPC</th></tr>` +
+    rows.map(([l,a,b,g]) => `<tr><td>${l}</td><td class="${done && g ? 'bad' : ''}${done ? '' : ' hidden'}">${a}</td><td class="${done && g ? 'good' : ''}${done ? '' : ' hidden'}">${b}</td></tr>`).join('');
+  const m = D.meta;
+  document.getElementById('foot').textContent = `Closed-loop MATLAB simulation of the DATACORE-X plant: both controllers see the same weather (${m.climate[0].toUpperCase() + m.climate.slice(1)}, day ${m.start_day}), the same IT load and the same fault (seed ${m.seed}). Across the full 500-run study: 0/40 unplanned trips with PI-HA-EMPC vs 34/40 with conventional EMPC, at no measurable energy cost.`;
+}
+
+// ------------------------------------------------------------------ controls
+function tick(ts) {
+  if (!playing) return;
+  if (ts - last > 1000 / (6*speed)) { last = ts; k++; if (k >= N()-1) { k = N()-1; stop(); } render(); }
+  timer = requestAnimationFrame(tick);
+}
+function play() { if (k >= N()-1) k = 0; playing = true; document.getElementById('play').textContent = 'Pause'; timer = requestAnimationFrame(tick); }
+function stop() { playing = false; document.getElementById('play').textContent = 'Play'; cancelAnimationFrame(timer); }
+document.getElementById('play').onclick = () => playing ? stop() : play();
+document.getElementById('reset').onclick = () => { stop(); k = 0; render(); };
+document.getElementById('slider').oninput = e => { stop(); k = +e.target.value; render(); };
+document.querySelectorAll('#scen button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#scen button').forEach(x => x.classList.toggle('on', x === b)); scen = b.dataset.s;
+  EV = {empc: events(D[scen].empc, scen), haempc: events(D[scen].haempc, scen)}; stop(); k = 0; render(); });
+document.querySelectorAll('#speed button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#speed button').forEach(x => x.classList.toggle('on', x === b)); speed = +b.dataset.v; });
+window.addEventListener('resize', () => D && render());
+
+fetch('compare_runs.json').then(r => r.json()).then(j => {
+  D = j; const p = new URLSearchParams(location.search);
+  if (p.get('scenario') === 'chiller') document.querySelector('#scen button[data-s="chiller"]').click();
+  EV = {empc: events(D[scen].empc, scen), haempc: events(D[scen].haempc, scen)}; render();
+  if (p.get('autoplay') === '1') play();
+}).catch(e => { document.body.innerHTML = '<p style="padding:20px">Could not load compare_runs.json: ' + e + '</p>'; });
+})();
+</script>
+</body>
+</html>

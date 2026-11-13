@@ -1,0 +1,2 @@
+for cl = ["pune" "frankfurt"], M = dcx_ident('Profile',"calibrated",'Climate',cl,'Hours',48,'Days',[15 105 196 288],'Method',"auto",'Orders',[4 6 8]); fprintf('== %s: %s order %d fit %s\n', cl, M.method, M.order, mat2str(M.fit_pct,3)); end
+diary off

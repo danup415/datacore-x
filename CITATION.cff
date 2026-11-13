@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "DATACORE-X: health-aware economic MPC for data-centre cooling (simulation twin, controllers and experiments)"
+version: 1.0.0
+date-released: 2026-11-10
+license: BSD-3-Clause
+authors:
+  - family-names: Deshmukh
+    given-names: Anup
+    affiliation: "Vishwakarma Institute of Technology, Pune, India"
+keywords:
+  - data centre cooling
+  - economic model predictive control
+  - health-aware control
+  - remaining useful life
+  - digital twin
+  - MATLAB
+  - Simulink
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+    description: "Frozen release v1.0.0 (fill in after the Zenodo release is published)"

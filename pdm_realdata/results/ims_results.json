@@ -1,0 +1,325 @@
+{
+ "bearings": [
+  {
+   "env_alarm_h": null,
+   "env_lead_h": null,
+   "env_band": null,
+   "test": 1,
+   "bearing": 1,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 827.6,
+   "alarm_h": null,
+   "lead_h": null,
+   "end_ratio": 1.26,
+   "diag_band": "BSF",
+   "snr_rise_db": {
+    "BPFO": -0.5,
+    "BPFI": 0.3,
+    "BSF": 0.3
+   },
+   "diag_correct": null,
+   "healthy_alarm": NaN,
+   "healthy_env_alarm": NaN
+  },
+  {
+   "env_alarm_h": null,
+   "env_lead_h": null,
+   "env_band": null,
+   "test": 1,
+   "bearing": 2,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 827.6,
+   "alarm_h": 819.0,
+   "lead_h": 8.5,
+   "end_ratio": 1.12,
+   "diag_band": "BPFI",
+   "snr_rise_db": {
+    "BPFO": -1.0,
+    "BPFI": 0.3,
+    "BSF": 0.1
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": NaN
+  },
+  {
+   "env_alarm_h": null,
+   "env_lead_h": null,
+   "env_band": null,
+   "test": 1,
+   "bearing": 3,
+   "failed": true,
+   "mode": "inner race",
+   "duration_h": 827.6,
+   "alarm_h": 786.8,
+   "lead_h": 40.8,
+   "end_ratio": 1.53,
+   "diag_band": "BPFI",
+   "snr_rise_db": {
+    "BPFO": 0.0,
+    "BPFI": 1.7,
+    "BSF": 0.0
+   },
+   "diag_correct": true,
+   "healthy_alarm": NaN,
+   "healthy_env_alarm": NaN,
+   "env_band_correct": null
+  },
+  {
+   "env_alarm_h": 816.9,
+   "env_lead_h": 10.7,
+   "env_band": "BPFO",
+   "test": 1,
+   "bearing": 4,
+   "failed": true,
+   "mode": "roller element",
+   "duration_h": 827.6,
+   "alarm_h": 700.0,
+   "lead_h": 127.5,
+   "end_ratio": 2.18,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 3.4,
+    "BPFI": 0.8,
+    "BSF": 0.5
+   },
+   "diag_correct": false,
+   "healthy_alarm": NaN,
+   "healthy_env_alarm": NaN,
+   "env_band_correct": false
+  },
+  {
+   "env_alarm_h": 94.8,
+   "env_lead_h": 69.0,
+   "env_band": "BPFO",
+   "test": 2,
+   "bearing": 1,
+   "failed": true,
+   "mode": "outer race",
+   "duration_h": 163.8,
+   "alarm_h": 117.8,
+   "lead_h": 46.0,
+   "end_ratio": 2.74,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 15.9,
+    "BPFI": 1.2,
+    "BSF": -0.4
+   },
+   "diag_correct": true,
+   "healthy_alarm": NaN,
+   "healthy_env_alarm": NaN,
+   "env_band_correct": true
+  },
+  {
+   "env_alarm_h": null,
+   "env_lead_h": null,
+   "env_band": null,
+   "test": 2,
+   "bearing": 2,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 163.8,
+   "alarm_h": 161.3,
+   "lead_h": 2.5,
+   "end_ratio": 1.43,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 0.6,
+    "BPFI": 0.0,
+    "BSF": -0.4
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": NaN
+  },
+  {
+   "env_alarm_h": null,
+   "env_lead_h": null,
+   "env_band": null,
+   "test": 2,
+   "bearing": 3,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 163.8,
+   "alarm_h": 161.3,
+   "lead_h": 2.5,
+   "end_ratio": 1.41,
+   "diag_band": "BPFI",
+   "snr_rise_db": {
+    "BPFO": -0.1,
+    "BPFI": 0.1,
+    "BSF": -0.7
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": NaN
+  },
+  {
+   "env_alarm_h": 141.3,
+   "env_lead_h": 22.5,
+   "env_band": "BPFO",
+   "test": 2,
+   "bearing": 4,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 163.8,
+   "alarm_h": 156.8,
+   "lead_h": 7.0,
+   "end_ratio": 1.69,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 6.3,
+    "BPFI": 0.1,
+    "BSF": -0.5
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": "propagated"
+  },
+  {
+   "env_alarm_h": 1060.4,
+   "env_lead_h": 12.8,
+   "env_band": "BPFO",
+   "test": 3,
+   "bearing": 1,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 1073.3,
+   "alarm_h": 1066.8,
+   "lead_h": 6.5,
+   "end_ratio": 1.01,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 0.4,
+    "BPFI": 0.0,
+    "BSF": 0.3
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": "propagated"
+  },
+  {
+   "env_alarm_h": 1064.4,
+   "env_lead_h": 8.8,
+   "env_band": "BPFO",
+   "test": 3,
+   "bearing": 2,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 1073.3,
+   "alarm_h": 1064.8,
+   "lead_h": 8.5,
+   "end_ratio": 1.05,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 0.7,
+    "BPFI": -0.1,
+    "BSF": 0.1
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": "propagated"
+  },
+  {
+   "env_alarm_h": 1048.4,
+   "env_lead_h": 24.8,
+   "env_band": "BPFO",
+   "test": 3,
+   "bearing": 3,
+   "failed": true,
+   "mode": "outer race",
+   "duration_h": 1073.3,
+   "alarm_h": 1047.3,
+   "lead_h": 26.0,
+   "end_ratio": 1.6,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 5.2,
+    "BPFI": 0.1,
+    "BSF": -0.2
+   },
+   "diag_correct": true,
+   "healthy_alarm": NaN,
+   "healthy_env_alarm": NaN,
+   "env_band_correct": true
+  },
+  {
+   "env_alarm_h": 1035.1,
+   "env_lead_h": 38.2,
+   "env_band": "BPFO",
+   "test": 3,
+   "bearing": 4,
+   "failed": false,
+   "mode": "none",
+   "duration_h": 1073.3,
+   "alarm_h": 1047.6,
+   "lead_h": 25.7,
+   "end_ratio": 1.47,
+   "diag_band": "BPFO",
+   "snr_rise_db": {
+    "BPFO": 2.0,
+    "BPFI": 0.5,
+    "BSF": 0.0
+   },
+   "diag_correct": null,
+   "healthy_alarm": "propagated",
+   "healthy_env_alarm": "false"
+  }
+ ],
+ "rul": [
+  {
+   "test": 1,
+   "bearing": 3,
+   "post_alarm_h": 40.8,
+   "mae_model_h": 90.7,
+   "mae_naive_h": 25.7
+  },
+  {
+   "test": 1,
+   "bearing": 4,
+   "post_alarm_h": 127.5,
+   "mae_model_h": 35.6,
+   "mae_naive_h": 65.5
+  },
+  {
+   "test": 2,
+   "bearing": 1,
+   "post_alarm_h": 46.0,
+   "mae_model_h": 53.3,
+   "mae_naive_h": 18.8
+  },
+  {
+   "test": 3,
+   "bearing": 3,
+   "post_alarm_h": 26.0,
+   "mae_model_h": 8.3,
+   "mae_naive_h": 45.4
+  }
+ ],
+ "summary": {
+  "failed_alarmed": 4,
+  "failed": 4,
+  "healthy_false_alarms": 0,
+  "healthy_propagated_alarms": 7,
+  "healthy": 8,
+  "diag_correct": 3,
+  "lead_h": [
+   40.8,
+   127.5,
+   46.0,
+   26.0
+  ],
+  "env_failed_alarmed": 3,
+  "env_lead_h": [
+   NaN,
+   10.7,
+   69.0,
+   24.8
+  ],
+  "env_false_alarms": 1,
+  "env_propagated_alarms": 3
+ }
+}

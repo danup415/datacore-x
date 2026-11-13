@@ -1,0 +1,36 @@
+# datasets and generated data (download separately; see pdm_realdata/README.md)
+data/
+*.sqlite
+# secrets
+ignition_api_key.txt
+*.key
+.env
+# Python / Node
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+app/datacore-x/dist/replay.json
+# MATLAB / Simulink
+*.asv
+*.slxc
+*.autosave
+slprj/
+*.mexw64
+# LaTeX build
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.spl
+*.blg
+*.synctex.gz
+# Ignition project backups
+app/datacore-x/ignition/_*/
+# archives and local backups
+*.zip
+_backup*/
+_bak*/

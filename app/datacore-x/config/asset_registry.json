@@ -1,0 +1,3392 @@
+{
+ "registry_version": "1.0.0",
+ "units_system": "SI (temperatures in °C)",
+ "coordinate_system": "metres; x east, z south, y up; pos = base-centre",
+ "assets": [
+  {
+   "id": "DCX",
+   "name": "DATACORE-X Facility",
+   "type": "facility",
+   "layer": "building",
+   "parent": null,
+   "pos": [
+    13,
+    0,
+    11
+   ],
+   "size": [
+    32,
+    5,
+    24
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "BLD-01",
+   "name": "Main building",
+   "type": "building",
+   "layer": "building",
+   "parent": "DCX",
+   "pos": [
+    13,
+    0,
+    9
+   ],
+   "size": [
+    26,
+    4.2,
+    18
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "DH-01",
+   "name": "Data hall",
+   "type": "room",
+   "layer": "building",
+   "parent": "BLD-01",
+   "pos": [
+    7,
+    0,
+    6
+   ],
+   "size": [
+    14,
+    4.0,
+    12
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "PR-01",
+   "name": "Chiller plant room",
+   "type": "room",
+   "layer": "building",
+   "parent": "BLD-01",
+   "pos": [
+    20,
+    0,
+    6
+   ],
+   "size": [
+    12,
+    4.0,
+    12
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "ER-01",
+   "name": "Electrical / UPS room",
+   "type": "room",
+   "layer": "building",
+   "parent": "BLD-01",
+   "pos": [
+    7,
+    0,
+    15
+   ],
+   "size": [
+    14,
+    4.0,
+    6
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "YARD-01",
+   "name": "Outdoor yard",
+   "type": "room",
+   "layer": "building",
+   "parent": "DCX",
+   "pos": [
+    16,
+    0,
+    21
+   ],
+   "size": [
+    32,
+    0.1,
+    6
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "ROOF-01",
+   "name": "Cooling tower deck",
+   "type": "room",
+   "layer": "building",
+   "parent": "DCX",
+   "pos": [
+    29.5,
+    0,
+    6
+   ],
+   "size": [
+    6,
+    0.1,
+    12
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "ROW-A",
+   "name": "Rack row A",
+   "type": "group",
+   "layer": "it",
+   "parent": "DH-01",
+   "pos": [
+    7.0,
+    0.6,
+    4.6
+   ],
+   "size": [
+    3.4,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "ROW-B",
+   "name": "Rack row B",
+   "type": "group",
+   "layer": "it",
+   "parent": "DH-01",
+   "pos": [
+    7.0,
+    0.6,
+    7.4
+   ],
+   "size": [
+    3.4,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [],
+   "has_health": false
+  },
+  {
+   "id": "ZONE-CA",
+   "name": "Cold aisle (contained)",
+   "type": "zone",
+   "layer": "zone",
+   "parent": "DH-01",
+   "pos": [
+    7.0,
+    0.6,
+    6.0
+   ],
+   "size": [
+    3.4,
+    2.3,
+    1.6
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "temp_c",
+     "label": "Zone temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/ZONE_CA/temp_c",
+     "opc_node": "ns=2;s=DCX.ZONE-CA.temp_c"
+    },
+    {
+     "key": "rh_pct",
+     "label": "Relative humidity",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/ZONE_CA/rh_pct",
+     "opc_node": "ns=2;s=DCX.ZONE-CA.rh_pct"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "ZONE-HA",
+   "name": "Hot aisle / room return",
+   "type": "zone",
+   "layer": "zone",
+   "parent": "DH-01",
+   "pos": [
+    7.0,
+    0.6,
+    6.0
+   ],
+   "size": [
+    9.0,
+    3.2,
+    9.0
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "temp_c",
+     "label": "Zone temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/ZONE_HA/temp_c",
+     "opc_node": "ns=2;s=DCX.ZONE-HA.temp_c"
+    },
+    {
+     "key": "rh_pct",
+     "label": "Relative humidity",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/ZONE_HA/rh_pct",
+     "opc_node": "ns=2;s=DCX.ZONE-HA.rh_pct"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-01",
+   "name": "Rack 01",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-A",
+   "pos": [
+    5.8,
+    0.6,
+    4.6
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 16.0,
+   "phase": "L1",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_01/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-01.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_01/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-01.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_01/power_kw",
+     "opc_node": "ns=2;s=DCX.R-01.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_01/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-01.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_01/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-01.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_01/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-01.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_01/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-01.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-02",
+   "name": "Rack 02",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-A",
+   "pos": [
+    6.6,
+    0.6,
+    4.6
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 16.0,
+   "phase": "L2",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_02/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-02.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_02/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-02.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_02/power_kw",
+     "opc_node": "ns=2;s=DCX.R-02.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_02/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-02.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_02/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-02.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_02/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-02.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_02/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-02.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-03",
+   "name": "Rack 03",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-A",
+   "pos": [
+    7.4,
+    0.6,
+    4.6
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 16.0,
+   "phase": "L3",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_03/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-03.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_03/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-03.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_03/power_kw",
+     "opc_node": "ns=2;s=DCX.R-03.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_03/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-03.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_03/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-03.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_03/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-03.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_03/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-03.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-04",
+   "name": "Rack 04",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-A",
+   "pos": [
+    8.2,
+    0.6,
+    4.6
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 16.0,
+   "phase": "L1",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_04/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-04.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_04/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-04.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_04/power_kw",
+     "opc_node": "ns=2;s=DCX.R-04.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_04/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-04.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_04/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-04.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_04/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-04.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_04/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-04.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-05",
+   "name": "Rack 05",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-B",
+   "pos": [
+    5.8,
+    0.6,
+    7.4
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 180.0,
+   "rated_kw": 16.0,
+   "phase": "L2",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_05/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-05.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_05/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-05.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_05/power_kw",
+     "opc_node": "ns=2;s=DCX.R-05.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_05/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-05.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_05/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-05.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_05/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-05.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_05/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-05.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-06",
+   "name": "Rack 06",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-B",
+   "pos": [
+    6.6,
+    0.6,
+    7.4
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 180.0,
+   "rated_kw": 16.0,
+   "phase": "L3",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_06/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-06.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_06/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-06.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_06/power_kw",
+     "opc_node": "ns=2;s=DCX.R-06.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_06/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-06.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_06/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-06.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_06/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-06.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_06/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-06.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-07",
+   "name": "Rack 07",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-B",
+   "pos": [
+    7.4,
+    0.6,
+    7.4
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 180.0,
+   "rated_kw": 16.0,
+   "phase": "L1",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_07/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-07.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_07/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-07.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_07/power_kw",
+     "opc_node": "ns=2;s=DCX.R-07.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_07/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-07.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_07/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-07.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_07/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-07.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_07/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-07.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "R-08",
+   "name": "Rack 08",
+   "type": "rack",
+   "layer": "it",
+   "parent": "ROW-B",
+   "pos": [
+    8.2,
+    0.6,
+    7.4
+   ],
+   "size": [
+    0.6,
+    2.2,
+    1.2
+   ],
+   "rot_y_deg": 180.0,
+   "rated_kw": 16.0,
+   "phase": "L2",
+   "tags": [
+    {
+     "key": "cpu_util",
+     "label": "CPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_08/cpu_util",
+     "opc_node": "ns=2;s=DCX.R-08.cpu_util"
+    },
+    {
+     "key": "gpu_util",
+     "label": "GPU utilisation",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]DataHall/R_08/gpu_util",
+     "opc_node": "ns=2;s=DCX.R-08.gpu_util"
+    },
+    {
+     "key": "power_kw",
+     "label": "Rack power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_08/power_kw",
+     "opc_node": "ns=2;s=DCX.R-08.power_kw"
+    },
+    {
+     "key": "inlet_c",
+     "label": "Inlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_08/inlet_c",
+     "opc_node": "ns=2;s=DCX.R-08.inlet_c"
+    },
+    {
+     "key": "outlet_c",
+     "label": "Outlet temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_08/outlet_c",
+     "opc_node": "ns=2;s=DCX.R-08.outlet_c"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Server airflow",
+     "unit": "m³/s",
+     "decimals": 3,
+     "path": "[DATACORE_X]DataHall/R_08/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.R-08.airflow_m3s"
+    },
+    {
+     "key": "heat_kw",
+     "label": "Heat generation",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]DataHall/R_08/heat_kw",
+     "opc_node": "ns=2;s=DCX.R-08.heat_kw"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "PDU-A",
+   "name": "PDU A (A-feed)",
+   "type": "pdu",
+   "layer": "electrical",
+   "parent": "DH-01",
+   "pos": [
+    4.9,
+    0.6,
+    4.6
+   ],
+   "size": [
+    0.8,
+    1.9,
+    1.0
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 150.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Load",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/PDU_A/load_kw",
+     "opc_node": "ns=2;s=DCX.PDU-A.load_kw"
+    },
+    {
+     "key": "load_pct",
+     "label": "Loading",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_A/load_pct",
+     "opc_node": "ns=2;s=DCX.PDU-A.load_pct"
+    },
+    {
+     "key": "current_l1_a",
+     "label": "Current L1",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_A/current_l1_a",
+     "opc_node": "ns=2;s=DCX.PDU-A.current_l1_a"
+    },
+    {
+     "key": "current_l2_a",
+     "label": "Current L2",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_A/current_l2_a",
+     "opc_node": "ns=2;s=DCX.PDU-A.current_l2_a"
+    },
+    {
+     "key": "current_l3_a",
+     "label": "Current L3",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_A/current_l3_a",
+     "opc_node": "ns=2;s=DCX.PDU-A.current_l3_a"
+    },
+    {
+     "key": "imbalance_pct",
+     "label": "Phase imbalance",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_A/imbalance_pct",
+     "opc_node": "ns=2;s=DCX.PDU-A.imbalance_pct"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "PDU-B",
+   "name": "PDU B (B-feed)",
+   "type": "pdu",
+   "layer": "electrical",
+   "parent": "DH-01",
+   "pos": [
+    4.9,
+    0.6,
+    7.4
+   ],
+   "size": [
+    0.8,
+    1.9,
+    1.0
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 150.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Load",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/PDU_B/load_kw",
+     "opc_node": "ns=2;s=DCX.PDU-B.load_kw"
+    },
+    {
+     "key": "load_pct",
+     "label": "Loading",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_B/load_pct",
+     "opc_node": "ns=2;s=DCX.PDU-B.load_pct"
+    },
+    {
+     "key": "current_l1_a",
+     "label": "Current L1",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_B/current_l1_a",
+     "opc_node": "ns=2;s=DCX.PDU-B.current_l1_a"
+    },
+    {
+     "key": "current_l2_a",
+     "label": "Current L2",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_B/current_l2_a",
+     "opc_node": "ns=2;s=DCX.PDU-B.current_l2_a"
+    },
+    {
+     "key": "current_l3_a",
+     "label": "Current L3",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_B/current_l3_a",
+     "opc_node": "ns=2;s=DCX.PDU-B.current_l3_a"
+    },
+    {
+     "key": "imbalance_pct",
+     "label": "Phase imbalance",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/PDU_B/imbalance_pct",
+     "opc_node": "ns=2;s=DCX.PDU-B.imbalance_pct"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "CRAH-01",
+   "name": "CRAH 01",
+   "type": "crah",
+   "layer": "cooling",
+   "parent": "DH-01",
+   "pos": [
+    3.5,
+    0.6,
+    0.75
+   ],
+   "size": [
+    2.4,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_01/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-01.fan_speed_pct"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Supply airflow",
+     "unit": "m³/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.CRAH-01.airflow_m3s"
+    },
+    {
+     "key": "supply_c",
+     "label": "Supply air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/supply_c",
+     "opc_node": "ns=2;s=DCX.CRAH-01.supply_c"
+    },
+    {
+     "key": "return_c",
+     "label": "Return air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/return_c",
+     "opc_node": "ns=2;s=DCX.CRAH-01.return_c"
+    },
+    {
+     "key": "valve_pct",
+     "label": "CHW valve position",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_01/valve_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-01.valve_pct"
+    },
+    {
+     "key": "chw_flow_ls",
+     "label": "CHW coil flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/chw_flow_ls",
+     "opc_node": "ns=2;s=DCX.CRAH-01.chw_flow_ls"
+    },
+    {
+     "key": "coil_kw",
+     "label": "Coil duty",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_01/coil_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-01.coil_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/fan_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-01.fan_kw"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Fan vibration",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_01/vib_mms",
+     "opc_node": "ns=2;s=DCX.CRAH-01.vib_mms"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CRAH-02",
+   "name": "CRAH 02",
+   "type": "crah",
+   "layer": "cooling",
+   "parent": "DH-01",
+   "pos": [
+    10.5,
+    0.6,
+    0.75
+   ],
+   "size": [
+    2.4,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_02/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-02.fan_speed_pct"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Supply airflow",
+     "unit": "m³/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.CRAH-02.airflow_m3s"
+    },
+    {
+     "key": "supply_c",
+     "label": "Supply air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/supply_c",
+     "opc_node": "ns=2;s=DCX.CRAH-02.supply_c"
+    },
+    {
+     "key": "return_c",
+     "label": "Return air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/return_c",
+     "opc_node": "ns=2;s=DCX.CRAH-02.return_c"
+    },
+    {
+     "key": "valve_pct",
+     "label": "CHW valve position",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_02/valve_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-02.valve_pct"
+    },
+    {
+     "key": "chw_flow_ls",
+     "label": "CHW coil flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/chw_flow_ls",
+     "opc_node": "ns=2;s=DCX.CRAH-02.chw_flow_ls"
+    },
+    {
+     "key": "coil_kw",
+     "label": "Coil duty",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_02/coil_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-02.coil_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/fan_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-02.fan_kw"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Fan vibration",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_02/vib_mms",
+     "opc_node": "ns=2;s=DCX.CRAH-02.vib_mms"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CRAH-03",
+   "name": "CRAH 03",
+   "type": "crah",
+   "layer": "cooling",
+   "parent": "DH-01",
+   "pos": [
+    3.5,
+    0.6,
+    11.25
+   ],
+   "size": [
+    2.4,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 180.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_03/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-03.fan_speed_pct"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Supply airflow",
+     "unit": "m³/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.CRAH-03.airflow_m3s"
+    },
+    {
+     "key": "supply_c",
+     "label": "Supply air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/supply_c",
+     "opc_node": "ns=2;s=DCX.CRAH-03.supply_c"
+    },
+    {
+     "key": "return_c",
+     "label": "Return air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/return_c",
+     "opc_node": "ns=2;s=DCX.CRAH-03.return_c"
+    },
+    {
+     "key": "valve_pct",
+     "label": "CHW valve position",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_03/valve_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-03.valve_pct"
+    },
+    {
+     "key": "chw_flow_ls",
+     "label": "CHW coil flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/chw_flow_ls",
+     "opc_node": "ns=2;s=DCX.CRAH-03.chw_flow_ls"
+    },
+    {
+     "key": "coil_kw",
+     "label": "Coil duty",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_03/coil_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-03.coil_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/fan_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-03.fan_kw"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Fan vibration",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_03/vib_mms",
+     "opc_node": "ns=2;s=DCX.CRAH-03.vib_mms"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CRAH-04",
+   "name": "CRAH 04",
+   "type": "crah",
+   "layer": "cooling",
+   "parent": "DH-01",
+   "pos": [
+    10.5,
+    0.6,
+    11.25
+   ],
+   "size": [
+    2.4,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 180.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_04/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-04.fan_speed_pct"
+    },
+    {
+     "key": "airflow_m3s",
+     "label": "Supply airflow",
+     "unit": "m³/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/airflow_m3s",
+     "opc_node": "ns=2;s=DCX.CRAH-04.airflow_m3s"
+    },
+    {
+     "key": "supply_c",
+     "label": "Supply air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/supply_c",
+     "opc_node": "ns=2;s=DCX.CRAH-04.supply_c"
+    },
+    {
+     "key": "return_c",
+     "label": "Return air temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/return_c",
+     "opc_node": "ns=2;s=DCX.CRAH-04.return_c"
+    },
+    {
+     "key": "valve_pct",
+     "label": "CHW valve position",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_04/valve_pct",
+     "opc_node": "ns=2;s=DCX.CRAH-04.valve_pct"
+    },
+    {
+     "key": "chw_flow_ls",
+     "label": "CHW coil flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/chw_flow_ls",
+     "opc_node": "ns=2;s=DCX.CRAH-04.chw_flow_ls"
+    },
+    {
+     "key": "coil_kw",
+     "label": "Coil duty",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CRAH_04/coil_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-04.coil_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/fan_kw",
+     "opc_node": "ns=2;s=DCX.CRAH-04.fan_kw"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Fan vibration",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CRAH_04/vib_mms",
+     "opc_node": "ns=2;s=DCX.CRAH-04.vib_mms"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CH-01",
+   "name": "Chiller 01",
+   "type": "chiller",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    18.2,
+    0,
+    3.0
+   ],
+   "size": [
+    4.0,
+    1.9,
+    1.6
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 160.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Evaporator load",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_01/load_kw",
+     "opc_node": "ns=2;s=DCX.CH-01.load_kw"
+    },
+    {
+     "key": "plr_pct",
+     "label": "Part-load ratio",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_01/plr_pct",
+     "opc_node": "ns=2;s=DCX.CH-01.plr_pct"
+    },
+    {
+     "key": "cop",
+     "label": "COP",
+     "unit": "-",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_01/cop",
+     "opc_node": "ns=2;s=DCX.CH-01.cop"
+    },
+    {
+     "key": "power_kw",
+     "label": "Compressor power",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_01/power_kw",
+     "opc_node": "ns=2;s=DCX.CH-01.power_kw"
+    },
+    {
+     "key": "chws_c",
+     "label": "CHW leaving temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_01/chws_c",
+     "opc_node": "ns=2;s=DCX.CH-01.chws_c"
+    },
+    {
+     "key": "chwr_c",
+     "label": "CHW entering temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_01/chwr_c",
+     "opc_node": "ns=2;s=DCX.CH-01.chwr_c"
+    },
+    {
+     "key": "cwe_c",
+     "label": "Condenser water entering",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_01/cwe_c",
+     "opc_node": "ns=2;s=DCX.CH-01.cwe_c"
+    },
+    {
+     "key": "cwl_c",
+     "label": "Condenser water leaving",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_01/cwl_c",
+     "opc_node": "ns=2;s=DCX.CH-01.cwl_c"
+    },
+    {
+     "key": "capacity_kw",
+     "label": "Available capacity",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_01/capacity_kw",
+     "opc_node": "ns=2;s=DCX.CH-01.capacity_kw"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CH-02",
+   "name": "Chiller 02",
+   "type": "chiller",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    18.2,
+    0,
+    9.0
+   ],
+   "size": [
+    4.0,
+    1.9,
+    1.6
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 160.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Evaporator load",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_02/load_kw",
+     "opc_node": "ns=2;s=DCX.CH-02.load_kw"
+    },
+    {
+     "key": "plr_pct",
+     "label": "Part-load ratio",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_02/plr_pct",
+     "opc_node": "ns=2;s=DCX.CH-02.plr_pct"
+    },
+    {
+     "key": "cop",
+     "label": "COP",
+     "unit": "-",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_02/cop",
+     "opc_node": "ns=2;s=DCX.CH-02.cop"
+    },
+    {
+     "key": "power_kw",
+     "label": "Compressor power",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_02/power_kw",
+     "opc_node": "ns=2;s=DCX.CH-02.power_kw"
+    },
+    {
+     "key": "chws_c",
+     "label": "CHW leaving temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_02/chws_c",
+     "opc_node": "ns=2;s=DCX.CH-02.chws_c"
+    },
+    {
+     "key": "chwr_c",
+     "label": "CHW entering temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_02/chwr_c",
+     "opc_node": "ns=2;s=DCX.CH-02.chwr_c"
+    },
+    {
+     "key": "cwe_c",
+     "label": "Condenser water entering",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_02/cwe_c",
+     "opc_node": "ns=2;s=DCX.CH-02.cwe_c"
+    },
+    {
+     "key": "cwl_c",
+     "label": "Condenser water leaving",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CH_02/cwl_c",
+     "opc_node": "ns=2;s=DCX.CH-02.cwl_c"
+    },
+    {
+     "key": "capacity_kw",
+     "label": "Available capacity",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CH_02/capacity_kw",
+     "opc_node": "ns=2;s=DCX.CH-02.capacity_kw"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "P-01",
+   "name": "CHW pump 01 (duty)",
+   "type": "pump",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    23.0,
+    0,
+    4.0
+   ],
+   "size": [
+    1.3,
+    0.9,
+    0.6
+   ],
+   "rot_y_deg": 90.0,
+   "rated_kw": 4.0,
+   "tags": [
+    {
+     "key": "speed_pct",
+     "label": "Speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_01/speed_pct",
+     "opc_node": "ns=2;s=DCX.P-01.speed_pct"
+    },
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_01/flow_ls",
+     "opc_node": "ns=2;s=DCX.P-01.flow_ls"
+    },
+    {
+     "key": "head_kpa",
+     "label": "Differential head",
+     "unit": "kPa",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_01/head_kpa",
+     "opc_node": "ns=2;s=DCX.P-01.head_kpa"
+    },
+    {
+     "key": "power_kw",
+     "label": "Shaft power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_01/power_kw",
+     "opc_node": "ns=2;s=DCX.P-01.power_kw"
+    },
+    {
+     "key": "eff_pct",
+     "label": "Hydraulic efficiency",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_01/eff_pct",
+     "opc_node": "ns=2;s=DCX.P-01.eff_pct"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Vibration (RMS)",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_01/vib_mms",
+     "opc_node": "ns=2;s=DCX.P-01.vib_mms"
+    },
+    {
+     "key": "current_a",
+     "label": "Motor current",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_01/current_a",
+     "opc_node": "ns=2;s=DCX.P-01.current_a"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "P-02",
+   "name": "CHW pump 02 (duty)",
+   "type": "pump",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    23.0,
+    0,
+    6.0
+   ],
+   "size": [
+    1.3,
+    0.9,
+    0.6
+   ],
+   "rot_y_deg": 90.0,
+   "rated_kw": 4.0,
+   "tags": [
+    {
+     "key": "speed_pct",
+     "label": "Speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_02/speed_pct",
+     "opc_node": "ns=2;s=DCX.P-02.speed_pct"
+    },
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_02/flow_ls",
+     "opc_node": "ns=2;s=DCX.P-02.flow_ls"
+    },
+    {
+     "key": "head_kpa",
+     "label": "Differential head",
+     "unit": "kPa",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_02/head_kpa",
+     "opc_node": "ns=2;s=DCX.P-02.head_kpa"
+    },
+    {
+     "key": "power_kw",
+     "label": "Shaft power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_02/power_kw",
+     "opc_node": "ns=2;s=DCX.P-02.power_kw"
+    },
+    {
+     "key": "eff_pct",
+     "label": "Hydraulic efficiency",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_02/eff_pct",
+     "opc_node": "ns=2;s=DCX.P-02.eff_pct"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Vibration (RMS)",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_02/vib_mms",
+     "opc_node": "ns=2;s=DCX.P-02.vib_mms"
+    },
+    {
+     "key": "current_a",
+     "label": "Motor current",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_02/current_a",
+     "opc_node": "ns=2;s=DCX.P-02.current_a"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "P-03",
+   "name": "CHW pump 03 (standby)",
+   "type": "pump",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    23.0,
+    0,
+    8.0
+   ],
+   "size": [
+    1.3,
+    0.9,
+    0.6
+   ],
+   "rot_y_deg": 90.0,
+   "rated_kw": 4.0,
+   "tags": [
+    {
+     "key": "speed_pct",
+     "label": "Speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_03/speed_pct",
+     "opc_node": "ns=2;s=DCX.P-03.speed_pct"
+    },
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_03/flow_ls",
+     "opc_node": "ns=2;s=DCX.P-03.flow_ls"
+    },
+    {
+     "key": "head_kpa",
+     "label": "Differential head",
+     "unit": "kPa",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_03/head_kpa",
+     "opc_node": "ns=2;s=DCX.P-03.head_kpa"
+    },
+    {
+     "key": "power_kw",
+     "label": "Shaft power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_03/power_kw",
+     "opc_node": "ns=2;s=DCX.P-03.power_kw"
+    },
+    {
+     "key": "eff_pct",
+     "label": "Hydraulic efficiency",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_03/eff_pct",
+     "opc_node": "ns=2;s=DCX.P-03.eff_pct"
+    },
+    {
+     "key": "vib_mms",
+     "label": "Vibration (RMS)",
+     "unit": "mm/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/P_03/vib_mms",
+     "opc_node": "ns=2;s=DCX.P-03.vib_mms"
+    },
+    {
+     "key": "current_a",
+     "label": "Motor current",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/P_03/current_a",
+     "opc_node": "ns=2;s=DCX.P-03.current_a"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "HX-01",
+   "name": "Waterside economiser HX",
+   "type": "hx",
+   "layer": "cooling",
+   "parent": "PR-01",
+   "pos": [
+    24.9,
+    0,
+    1.6
+   ],
+   "size": [
+    0.7,
+    1.8,
+    1.2
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "duty_kw",
+     "label": "Heat duty",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/HX_01/duty_kw",
+     "opc_node": "ns=2;s=DCX.HX-01.duty_kw"
+    },
+    {
+     "key": "effectiveness_pct",
+     "label": "Effectiveness",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/HX_01/effectiveness_pct",
+     "opc_node": "ns=2;s=DCX.HX-01.effectiveness_pct"
+    },
+    {
+     "key": "chw_in_c",
+     "label": "CHW in",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/HX_01/chw_in_c",
+     "opc_node": "ns=2;s=DCX.HX-01.chw_in_c"
+    },
+    {
+     "key": "chw_out_c",
+     "label": "CHW out",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/HX_01/chw_out_c",
+     "opc_node": "ns=2;s=DCX.HX-01.chw_out_c"
+    },
+    {
+     "key": "cw_in_c",
+     "label": "CW in",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/HX_01/cw_in_c",
+     "opc_node": "ns=2;s=DCX.HX-01.cw_in_c"
+    },
+    {
+     "key": "cw_out_c",
+     "label": "CW out",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/HX_01/cw_out_c",
+     "opc_node": "ns=2;s=DCX.HX-01.cw_out_c"
+    },
+    {
+     "key": "ua_kwk",
+     "label": "Effective UA",
+     "unit": "kW/K",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/HX_01/ua_kwk",
+     "opc_node": "ns=2;s=DCX.HX-01.ua_kwk"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CT-01",
+   "name": "Cooling tower 01",
+   "type": "tower",
+   "layer": "cooling",
+   "parent": "ROOF-01",
+   "pos": [
+    29.5,
+    0,
+    3.5
+   ],
+   "size": [
+    3.0,
+    3.8,
+    3.0
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 110.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CT_01/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CT-01.fan_speed_pct"
+    },
+    {
+     "key": "leaving_c",
+     "label": "Leaving water",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_01/leaving_c",
+     "opc_node": "ns=2;s=DCX.CT-01.leaving_c"
+    },
+    {
+     "key": "entering_c",
+     "label": "Entering water",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_01/entering_c",
+     "opc_node": "ns=2;s=DCX.CT-01.entering_c"
+    },
+    {
+     "key": "heat_rej_kw",
+     "label": "Heat rejection",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CT_01/heat_rej_kw",
+     "opc_node": "ns=2;s=DCX.CT-01.heat_rej_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_01/fan_kw",
+     "opc_node": "ns=2;s=DCX.CT-01.fan_kw"
+    },
+    {
+     "key": "approach_k",
+     "label": "Approach",
+     "unit": "K",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_01/approach_k",
+     "opc_node": "ns=2;s=DCX.CT-01.approach_k"
+    },
+    {
+     "key": "wetbulb_c",
+     "label": "Ambient wet-bulb",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_01/wetbulb_c",
+     "opc_node": "ns=2;s=DCX.CT-01.wetbulb_c"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "CT-02",
+   "name": "Cooling tower 02",
+   "type": "tower",
+   "layer": "cooling",
+   "parent": "ROOF-01",
+   "pos": [
+    29.5,
+    0,
+    8.5
+   ],
+   "size": [
+    3.0,
+    3.8,
+    3.0
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 110.0,
+   "tags": [
+    {
+     "key": "fan_speed_pct",
+     "label": "Fan speed",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CT_02/fan_speed_pct",
+     "opc_node": "ns=2;s=DCX.CT-02.fan_speed_pct"
+    },
+    {
+     "key": "leaving_c",
+     "label": "Leaving water",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_02/leaving_c",
+     "opc_node": "ns=2;s=DCX.CT-02.leaving_c"
+    },
+    {
+     "key": "entering_c",
+     "label": "Entering water",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_02/entering_c",
+     "opc_node": "ns=2;s=DCX.CT-02.entering_c"
+    },
+    {
+     "key": "heat_rej_kw",
+     "label": "Heat rejection",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Cooling/CT_02/heat_rej_kw",
+     "opc_node": "ns=2;s=DCX.CT-02.heat_rej_kw"
+    },
+    {
+     "key": "fan_kw",
+     "label": "Fan power",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_02/fan_kw",
+     "opc_node": "ns=2;s=DCX.CT-02.fan_kw"
+    },
+    {
+     "key": "approach_k",
+     "label": "Approach",
+     "unit": "K",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_02/approach_k",
+     "opc_node": "ns=2;s=DCX.CT-02.approach_k"
+    },
+    {
+     "key": "wetbulb_c",
+     "label": "Ambient wet-bulb",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/CT_02/wetbulb_c",
+     "opc_node": "ns=2;s=DCX.CT-02.wetbulb_c"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "TX-01",
+   "name": "Transformer 11/0.415 kV",
+   "type": "transformer",
+   "layer": "electrical",
+   "parent": "YARD-01",
+   "pos": [
+    4.0,
+    0,
+    21.0
+   ],
+   "size": [
+    2.2,
+    2.4,
+    1.8
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kva": 500.0,
+   "tags": [
+    {
+     "key": "load_kva",
+     "label": "Load",
+     "unit": "kVA",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/TX_01/load_kva",
+     "opc_node": "ns=2;s=DCX.TX-01.load_kva"
+    },
+    {
+     "key": "load_pct",
+     "label": "Loading",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/TX_01/load_pct",
+     "opc_node": "ns=2;s=DCX.TX-01.load_pct"
+    },
+    {
+     "key": "losses_kw",
+     "label": "Losses",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/TX_01/losses_kw",
+     "opc_node": "ns=2;s=DCX.TX-01.losses_kw"
+    },
+    {
+     "key": "winding_c",
+     "label": "Winding hot-spot",
+     "unit": "°C",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/TX_01/winding_c",
+     "opc_node": "ns=2;s=DCX.TX-01.winding_c"
+    },
+    {
+     "key": "lv_voltage_v",
+     "label": "LV voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/TX_01/lv_voltage_v",
+     "opc_node": "ns=2;s=DCX.TX-01.lv_voltage_v"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "GEN-01",
+   "name": "Standby generator",
+   "type": "generator",
+   "layer": "electrical",
+   "parent": "YARD-01",
+   "pos": [
+    10.5,
+    0,
+    21.2
+   ],
+   "size": [
+    5.0,
+    2.5,
+    2.0
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 400.0,
+   "note": "Added to the 8A asset list: required for a realistic utility-failure scenario.",
+   "tags": [
+    {
+     "key": "power_kw",
+     "label": "Output power",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/GEN_01/power_kw",
+     "opc_node": "ns=2;s=DCX.GEN-01.power_kw"
+    },
+    {
+     "key": "frequency_hz",
+     "label": "Frequency",
+     "unit": "Hz",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/GEN_01/frequency_hz",
+     "opc_node": "ns=2;s=DCX.GEN-01.frequency_hz"
+    },
+    {
+     "key": "fuel_pct",
+     "label": "Fuel level",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/GEN_01/fuel_pct",
+     "opc_node": "ns=2;s=DCX.GEN-01.fuel_pct"
+    },
+    {
+     "key": "run_s",
+     "label": "Run time",
+     "unit": "s",
+     "decimals": 0,
+     "path": "[DATACORE_X]Electrical/GEN_01/run_s",
+     "opc_node": "ns=2;s=DCX.GEN-01.run_s"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "SWG-01",
+   "name": "Main LV switchgear",
+   "type": "switchgear",
+   "layer": "electrical",
+   "parent": "ER-01",
+   "pos": [
+    3.6,
+    0,
+    13.4
+   ],
+   "size": [
+    5.0,
+    2.2,
+    0.8
+   ],
+   "rot_y_deg": 0.0,
+   "tags": [
+    {
+     "key": "bus_voltage_v",
+     "label": "Bus voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/SWG_01/bus_voltage_v",
+     "opc_node": "ns=2;s=DCX.SWG-01.bus_voltage_v"
+    },
+    {
+     "key": "bus_current_a",
+     "label": "Bus current",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/SWG_01/bus_current_a",
+     "opc_node": "ns=2;s=DCX.SWG-01.bus_current_a"
+    },
+    {
+     "key": "frequency_hz",
+     "label": "Frequency",
+     "unit": "Hz",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/SWG_01/frequency_hz",
+     "opc_node": "ns=2;s=DCX.SWG-01.frequency_hz"
+    },
+    {
+     "key": "mech_load_kw",
+     "label": "Mechanical bus load",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/SWG_01/mech_load_kw",
+     "opc_node": "ns=2;s=DCX.SWG-01.mech_load_kw"
+    },
+    {
+     "key": "source_code",
+     "label": "Source (0 none,1 utility,2 generator)",
+     "unit": "-",
+     "decimals": 0,
+     "path": "[DATACORE_X]Electrical/SWG_01/source_code",
+     "opc_node": "ns=2;s=DCX.SWG-01.source_code"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "UPS-A",
+   "name": "UPS A",
+   "type": "ups",
+   "layer": "electrical",
+   "parent": "ER-01",
+   "pos": [
+    8.2,
+    0,
+    13.4
+   ],
+   "size": [
+    1.6,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 150.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Output load",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_A/load_kw",
+     "opc_node": "ns=2;s=DCX.UPS-A.load_kw"
+    },
+    {
+     "key": "load_pct",
+     "label": "Loading",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_A/load_pct",
+     "opc_node": "ns=2;s=DCX.UPS-A.load_pct"
+    },
+    {
+     "key": "eff_pct",
+     "label": "Efficiency",
+     "unit": "%",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/UPS_A/eff_pct",
+     "opc_node": "ns=2;s=DCX.UPS-A.eff_pct"
+    },
+    {
+     "key": "losses_kw",
+     "label": "Losses",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/UPS_A/losses_kw",
+     "opc_node": "ns=2;s=DCX.UPS-A.losses_kw"
+    },
+    {
+     "key": "input_v",
+     "label": "Input voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_A/input_v",
+     "opc_node": "ns=2;s=DCX.UPS-A.input_v"
+    },
+    {
+     "key": "output_v",
+     "label": "Output voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_A/output_v",
+     "opc_node": "ns=2;s=DCX.UPS-A.output_v"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "UPS-B",
+   "name": "UPS B",
+   "type": "ups",
+   "layer": "electrical",
+   "parent": "ER-01",
+   "pos": [
+    8.2,
+    0,
+    16.6
+   ],
+   "size": [
+    1.6,
+    2.0,
+    0.9
+   ],
+   "rot_y_deg": 0.0,
+   "rated_kw": 150.0,
+   "tags": [
+    {
+     "key": "load_kw",
+     "label": "Output load",
+     "unit": "kW",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_B/load_kw",
+     "opc_node": "ns=2;s=DCX.UPS-B.load_kw"
+    },
+    {
+     "key": "load_pct",
+     "label": "Loading",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_B/load_pct",
+     "opc_node": "ns=2;s=DCX.UPS-B.load_pct"
+    },
+    {
+     "key": "eff_pct",
+     "label": "Efficiency",
+     "unit": "%",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/UPS_B/eff_pct",
+     "opc_node": "ns=2;s=DCX.UPS-B.eff_pct"
+    },
+    {
+     "key": "losses_kw",
+     "label": "Losses",
+     "unit": "kW",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/UPS_B/losses_kw",
+     "opc_node": "ns=2;s=DCX.UPS-B.losses_kw"
+    },
+    {
+     "key": "input_v",
+     "label": "Input voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_B/input_v",
+     "opc_node": "ns=2;s=DCX.UPS-B.input_v"
+    },
+    {
+     "key": "output_v",
+     "label": "Output voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/UPS_B/output_v",
+     "opc_node": "ns=2;s=DCX.UPS-B.output_v"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "BAT-A",
+   "name": "Battery bank A",
+   "type": "battery",
+   "layer": "electrical",
+   "parent": "ER-01",
+   "pos": [
+    11.6,
+    0,
+    13.4
+   ],
+   "size": [
+    2.2,
+    2.0,
+    0.8
+   ],
+   "rot_y_deg": 0.0,
+   "capacity_ah": 60.0,
+   "tags": [
+    {
+     "key": "soc_pct",
+     "label": "State of charge",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/soc_pct",
+     "opc_node": "ns=2;s=DCX.BAT-A.soc_pct"
+    },
+    {
+     "key": "soh_pct",
+     "label": "State of health",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/soh_pct",
+     "opc_node": "ns=2;s=DCX.BAT-A.soh_pct"
+    },
+    {
+     "key": "voltage_v",
+     "label": "String voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/voltage_v",
+     "opc_node": "ns=2;s=DCX.BAT-A.voltage_v"
+    },
+    {
+     "key": "current_a",
+     "label": "Current (+dis/-chg)",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/current_a",
+     "opc_node": "ns=2;s=DCX.BAT-A.current_a"
+    },
+    {
+     "key": "temp_c",
+     "label": "Battery temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/BAT_A/temp_c",
+     "opc_node": "ns=2;s=DCX.BAT-A.temp_c"
+    },
+    {
+     "key": "runtime_min",
+     "label": "Estimated runtime",
+     "unit": "min",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/runtime_min",
+     "opc_node": "ns=2;s=DCX.BAT-A.runtime_min"
+    },
+    {
+     "key": "rint_mohm",
+     "label": "Internal resistance",
+     "unit": "mΩ",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_A/rint_mohm",
+     "opc_node": "ns=2;s=DCX.BAT-A.rint_mohm"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "BAT-B",
+   "name": "Battery bank B",
+   "type": "battery",
+   "layer": "electrical",
+   "parent": "ER-01",
+   "pos": [
+    11.6,
+    0,
+    16.6
+   ],
+   "size": [
+    2.2,
+    2.0,
+    0.8
+   ],
+   "rot_y_deg": 0.0,
+   "capacity_ah": 60.0,
+   "tags": [
+    {
+     "key": "soc_pct",
+     "label": "State of charge",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/soc_pct",
+     "opc_node": "ns=2;s=DCX.BAT-B.soc_pct"
+    },
+    {
+     "key": "soh_pct",
+     "label": "State of health",
+     "unit": "%",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/soh_pct",
+     "opc_node": "ns=2;s=DCX.BAT-B.soh_pct"
+    },
+    {
+     "key": "voltage_v",
+     "label": "String voltage",
+     "unit": "V",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/voltage_v",
+     "opc_node": "ns=2;s=DCX.BAT-B.voltage_v"
+    },
+    {
+     "key": "current_a",
+     "label": "Current (+dis/-chg)",
+     "unit": "A",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/current_a",
+     "opc_node": "ns=2;s=DCX.BAT-B.current_a"
+    },
+    {
+     "key": "temp_c",
+     "label": "Battery temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Electrical/BAT_B/temp_c",
+     "opc_node": "ns=2;s=DCX.BAT-B.temp_c"
+    },
+    {
+     "key": "runtime_min",
+     "label": "Estimated runtime",
+     "unit": "min",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/runtime_min",
+     "opc_node": "ns=2;s=DCX.BAT-B.runtime_min"
+    },
+    {
+     "key": "rint_mohm",
+     "label": "Internal resistance",
+     "unit": "mΩ",
+     "decimals": 1,
+     "path": "[DATACORE_X]Electrical/BAT_B/rint_mohm",
+     "opc_node": "ns=2;s=DCX.BAT-B.rint_mohm"
+    }
+   ],
+   "has_health": true
+  },
+  {
+   "id": "PIPE-CHWS",
+   "name": "Chilled-water supply",
+   "type": "pipe",
+   "layer": "piping",
+   "parent": "BLD-01",
+   "pos": [
+    14,
+    0,
+    6
+   ],
+   "size": [
+    0,
+    0,
+    0
+   ],
+   "rot_y_deg": 0.0,
+   "paths": [
+    [
+     [
+      16.2,
+      1.0,
+      3.0
+     ],
+     [
+      15.3,
+      1.0,
+      3.0
+     ],
+     [
+      15.3,
+      1.0,
+      6.2
+     ]
+    ],
+    [
+     [
+      16.2,
+      1.0,
+      9.0
+     ],
+     [
+      15.3,
+      1.0,
+      9.0
+     ],
+     [
+      15.3,
+      1.0,
+      6.2
+     ]
+    ],
+    [
+     [
+      15.3,
+      1.0,
+      6.2
+     ],
+     [
+      14.4,
+      1.0,
+      6.2
+     ],
+     [
+      14.4,
+      0.32,
+      6.2
+     ],
+     [
+      10.5,
+      0.32,
+      6.2
+     ],
+     [
+      3.5,
+      0.32,
+      6.2
+     ]
+    ],
+    [
+     [
+      10.5,
+      0.32,
+      6.2
+     ],
+     [
+      10.5,
+      0.32,
+      1.3
+     ]
+    ],
+    [
+     [
+      10.5,
+      0.32,
+      6.2
+     ],
+     [
+      10.5,
+      0.32,
+      10.7
+     ]
+    ],
+    [
+     [
+      3.5,
+      0.32,
+      6.2
+     ],
+     [
+      3.5,
+      0.32,
+      1.3
+     ]
+    ],
+    [
+     [
+      3.5,
+      0.32,
+      6.2
+     ],
+     [
+      3.5,
+      0.32,
+      10.7
+     ]
+    ]
+   ],
+   "diameter_m": 0.1,
+   "medium": "chw_supply",
+   "tags": [
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWS/flow_ls",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWS.flow_ls"
+    },
+    {
+     "key": "temp_c",
+     "label": "Temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWS/temp_c",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWS.temp_c"
+    },
+    {
+     "key": "velocity_ms",
+     "label": "Mean velocity",
+     "unit": "m/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWS/velocity_ms",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWS.velocity_ms"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "PIPE-CHWR",
+   "name": "Chilled-water return",
+   "type": "pipe",
+   "layer": "piping",
+   "parent": "BLD-01",
+   "pos": [
+    14,
+    0,
+    6
+   ],
+   "size": [
+    0,
+    0,
+    0
+   ],
+   "rot_y_deg": 0.0,
+   "paths": [
+    [
+     [
+      3.9,
+      0.18,
+      1.3
+     ],
+     [
+      3.9,
+      0.18,
+      5.7
+     ]
+    ],
+    [
+     [
+      3.9,
+      0.18,
+      10.7
+     ],
+     [
+      3.9,
+      0.18,
+      5.7
+     ]
+    ],
+    [
+     [
+      10.9,
+      0.18,
+      1.3
+     ],
+     [
+      10.9,
+      0.18,
+      5.7
+     ]
+    ],
+    [
+     [
+      10.9,
+      0.18,
+      10.7
+     ],
+     [
+      10.9,
+      0.18,
+      5.7
+     ]
+    ],
+    [
+     [
+      3.9,
+      0.18,
+      5.7
+     ],
+     [
+      10.9,
+      0.18,
+      5.7
+     ],
+     [
+      14.7,
+      0.18,
+      5.7
+     ],
+     [
+      14.7,
+      1.7,
+      5.7
+     ],
+     [
+      21.8,
+      1.7,
+      5.7
+     ]
+    ],
+    [
+     [
+      21.8,
+      1.7,
+      5.7
+     ],
+     [
+      21.8,
+      1.7,
+      4.0
+     ],
+     [
+      22.3,
+      0.6,
+      4.0
+     ]
+    ],
+    [
+     [
+      21.8,
+      1.7,
+      5.7
+     ],
+     [
+      21.8,
+      1.7,
+      6.0
+     ],
+     [
+      22.3,
+      0.6,
+      6.0
+     ]
+    ],
+    [
+     [
+      21.8,
+      1.7,
+      5.7
+     ],
+     [
+      21.8,
+      1.7,
+      8.0
+     ],
+     [
+      22.3,
+      0.6,
+      8.0
+     ]
+    ],
+    [
+     [
+      23.7,
+      0.6,
+      4.0
+     ],
+     [
+      24.3,
+      0.6,
+      4.0
+     ],
+     [
+      24.3,
+      0.6,
+      1.6
+     ]
+    ],
+    [
+     [
+      23.7,
+      0.6,
+      6.0
+     ],
+     [
+      24.3,
+      0.6,
+      6.0
+     ],
+     [
+      24.3,
+      0.6,
+      4.0
+     ]
+    ],
+    [
+     [
+      23.7,
+      0.6,
+      8.0
+     ],
+     [
+      24.3,
+      0.6,
+      8.0
+     ],
+     [
+      24.3,
+      0.6,
+      6.0
+     ]
+    ],
+    [
+     [
+      24.9,
+      1.9,
+      1.6
+     ],
+     [
+      24.9,
+      2.3,
+      1.6
+     ],
+     [
+      20.4,
+      2.3,
+      1.6
+     ],
+     [
+      20.4,
+      1.4,
+      3.0
+     ]
+    ],
+    [
+     [
+      20.4,
+      2.3,
+      1.6
+     ],
+     [
+      20.4,
+      2.3,
+      9.0
+     ],
+     [
+      20.4,
+      1.4,
+      9.0
+     ]
+    ]
+   ],
+   "diameter_m": 0.1,
+   "medium": "chw_return",
+   "tags": [
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWR/flow_ls",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWR.flow_ls"
+    },
+    {
+     "key": "temp_c",
+     "label": "Temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWR/temp_c",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWR.temp_c"
+    },
+    {
+     "key": "velocity_ms",
+     "label": "Mean velocity",
+     "unit": "m/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CHWR/velocity_ms",
+     "opc_node": "ns=2;s=DCX.PIPE-CHWR.velocity_ms"
+    }
+   ],
+   "has_health": false
+  },
+  {
+   "id": "PIPE-CW",
+   "name": "Condenser water",
+   "type": "pipe",
+   "layer": "piping",
+   "parent": "PR-01",
+   "pos": [
+    24,
+    0,
+    6
+   ],
+   "size": [
+    0,
+    0,
+    0
+   ],
+   "rot_y_deg": 0.0,
+   "paths": [
+    [
+     [
+      18.2,
+      1.95,
+      3.0
+     ],
+     [
+      18.2,
+      2.8,
+      3.0
+     ],
+     [
+      27.0,
+      2.8,
+      3.0
+     ],
+     [
+      27.0,
+      3.9,
+      3.5
+     ],
+     [
+      28.0,
+      3.9,
+      3.5
+     ]
+    ],
+    [
+     [
+      18.2,
+      1.95,
+      9.0
+     ],
+     [
+      18.2,
+      2.8,
+      9.0
+     ],
+     [
+      27.0,
+      2.8,
+      9.0
+     ],
+     [
+      27.0,
+      3.9,
+      8.5
+     ],
+     [
+      28.0,
+      3.9,
+      8.5
+     ]
+    ],
+    [
+     [
+      28.0,
+      0.3,
+      3.5
+     ],
+     [
+      26.6,
+      0.3,
+      3.5
+     ],
+     [
+      26.6,
+      0.3,
+      1.0
+     ],
+     [
+      25.3,
+      0.3,
+      1.0
+     ]
+    ],
+    [
+     [
+      28.0,
+      0.3,
+      8.5
+     ],
+     [
+      26.6,
+      0.3,
+      8.5
+     ],
+     [
+      26.6,
+      0.3,
+      3.5
+     ]
+    ],
+    [
+     [
+      25.3,
+      1.2,
+      1.0
+     ],
+     [
+      26.0,
+      1.2,
+      1.0
+     ],
+     [
+      26.0,
+      1.2,
+      6.0
+     ],
+     [
+      20.2,
+      0.5,
+      6.0
+     ],
+     [
+      20.2,
+      0.5,
+      3.0
+     ]
+    ],
+    [
+     [
+      20.2,
+      0.5,
+      6.0
+     ],
+     [
+      20.2,
+      0.5,
+      9.0
+     ]
+    ]
+   ],
+   "diameter_m": 0.125,
+   "medium": "condenser",
+   "tags": [
+    {
+     "key": "flow_ls",
+     "label": "Flow",
+     "unit": "L/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CW/flow_ls",
+     "opc_node": "ns=2;s=DCX.PIPE-CW.flow_ls"
+    },
+    {
+     "key": "temp_c",
+     "label": "Temperature",
+     "unit": "°C",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CW/temp_c",
+     "opc_node": "ns=2;s=DCX.PIPE-CW.temp_c"
+    },
+    {
+     "key": "velocity_ms",
+     "label": "Mean velocity",
+     "unit": "m/s",
+     "decimals": 2,
+     "path": "[DATACORE_X]Cooling/PIPE_CW/velocity_ms",
+     "opc_node": "ns=2;s=DCX.PIPE-CW.velocity_ms"
+    }
+   ],
+   "has_health": false
+  }
+ ],
+ "electrical_links": [
+  [
+   "TX-01",
+   "SWG-01"
+  ],
+  [
+   "GEN-01",
+   "SWG-01"
+  ],
+  [
+   "SWG-01",
+   "UPS-A"
+  ],
+  [
+   "SWG-01",
+   "UPS-B"
+  ],
+  [
+   "UPS-A",
+   "BAT-A"
+  ],
+  [
+   "UPS-B",
+   "BAT-B"
+  ],
+  [
+   "UPS-A",
+   "PDU-A"
+  ],
+  [
+   "UPS-B",
+   "PDU-B"
+  ],
+  [
+   "SWG-01",
+   "CH-01"
+  ],
+  [
+   "SWG-01",
+   "CH-02"
+  ],
+  [
+   "SWG-01",
+   "P-02"
+  ],
+  [
+   "SWG-01",
+   "CRAH-01"
+  ],
+  [
+   "SWG-01",
+   "CRAH-03"
+  ],
+  [
+   "PDU-A",
+   "R-01"
+  ],
+  [
+   "PDU-A",
+   "R-02"
+  ],
+  [
+   "PDU-A",
+   "R-03"
+  ],
+  [
+   "PDU-A",
+   "R-04"
+  ],
+  [
+   "PDU-A",
+   "R-05"
+  ],
+  [
+   "PDU-A",
+   "R-06"
+  ],
+  [
+   "PDU-A",
+   "R-07"
+  ],
+  [
+   "PDU-A",
+   "R-08"
+  ],
+  [
+   "PDU-B",
+   "R-01"
+  ],
+  [
+   "PDU-B",
+   "R-02"
+  ],
+  [
+   "PDU-B",
+   "R-03"
+  ],
+  [
+   "PDU-B",
+   "R-04"
+  ],
+  [
+   "PDU-B",
+   "R-05"
+  ],
+  [
+   "PDU-B",
+   "R-06"
+  ],
+  [
+   "PDU-B",
+   "R-07"
+  ],
+  [
+   "PDU-B",
+   "R-08"
+  ]
+ ],
+ "airflow": {
+  "tiles": [
+   [
+    5.8,
+    0.6,
+    5.6
+   ],
+   [
+    5.8,
+    0.6,
+    6.4
+   ],
+   [
+    6.6,
+    0.6,
+    5.6
+   ],
+   [
+    6.6,
+    0.6,
+    6.4
+   ],
+   [
+    7.4,
+    0.6,
+    5.6
+   ],
+   [
+    7.4,
+    0.6,
+    6.4
+   ],
+   [
+    8.2,
+    0.6,
+    5.6
+   ],
+   [
+    8.2,
+    0.6,
+    6.4
+   ]
+  ],
+  "plenum_y": 0.3,
+  "return_y": 3.3
+ },
+ "facility_tags": [
+  {
+   "key": "it_load_kw",
+   "label": "IT load",
+   "unit": "kW",
+   "decimals": 1,
+   "path": "[DATACORE_X]Facility/it_load_kw",
+   "opc_node": "ns=2;s=DCX.Facility.it_load_kw"
+  },
+  {
+   "key": "facility_power_kw",
+   "label": "Facility power",
+   "unit": "kW",
+   "decimals": 1,
+   "path": "[DATACORE_X]Facility/facility_power_kw",
+   "opc_node": "ns=2;s=DCX.Facility.facility_power_kw"
+  },
+  {
+   "key": "cooling_power_kw",
+   "label": "Cooling power",
+   "unit": "kW",
+   "decimals": 1,
+   "path": "[DATACORE_X]Facility/cooling_power_kw",
+   "opc_node": "ns=2;s=DCX.Facility.cooling_power_kw"
+  },
+  {
+   "key": "elec_losses_kw",
+   "label": "Electrical losses",
+   "unit": "kW",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/elec_losses_kw",
+   "opc_node": "ns=2;s=DCX.Facility.elec_losses_kw"
+  },
+  {
+   "key": "pue",
+   "label": "PUE",
+   "unit": "-",
+   "decimals": 3,
+   "path": "[DATACORE_X]Facility/pue",
+   "opc_node": "ns=2;s=DCX.Facility.pue"
+  },
+  {
+   "key": "max_inlet_c",
+   "label": "Max rack inlet",
+   "unit": "°C",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/max_inlet_c",
+   "opc_node": "ns=2;s=DCX.Facility.max_inlet_c"
+  },
+  {
+   "key": "chws_c",
+   "label": "CHW supply",
+   "unit": "°C",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/chws_c",
+   "opc_node": "ns=2;s=DCX.Facility.chws_c"
+  },
+  {
+   "key": "chwr_c",
+   "label": "CHW return",
+   "unit": "°C",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/chwr_c",
+   "opc_node": "ns=2;s=DCX.Facility.chwr_c"
+  },
+  {
+   "key": "wetbulb_c",
+   "label": "Ambient wet-bulb",
+   "unit": "°C",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/wetbulb_c",
+   "opc_node": "ns=2;s=DCX.Facility.wetbulb_c"
+  },
+  {
+   "key": "energy_kwh",
+   "label": "Facility energy (run)",
+   "unit": "kWh",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/energy_kwh",
+   "opc_node": "ns=2;s=DCX.Facility.energy_kwh"
+  },
+  {
+   "key": "it_energy_kwh",
+   "label": "IT energy (run)",
+   "unit": "kWh",
+   "decimals": 2,
+   "path": "[DATACORE_X]Facility/it_energy_kwh",
+   "opc_node": "ns=2;s=DCX.Facility.it_energy_kwh"
+  }
+ ]
+}

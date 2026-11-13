@@ -1,0 +1,18 @@
+duty pump P-01, lead chiller CH-01
+S01 Increase IT workload                     40/40
+S02 Simulate rack overheating                40/40
+S03 Reduce pump efficiency                   40/40
+S04 Introduce pump cavitation                38/38
+S05 Disable a CRAH unit                      40/40
+S06 Degrade chiller performance              39/39
+S07 Simulate utility power failure           42/42
+S08 Switch to UPS (battery) operation        40/40
+S09 Introduce battery degradation            40/40
+S10 Change workload placement                39/39
+S11 Pump bearing degradation (flagship)      39/39
+S12 Heat-exchanger fouling                   39/39
+S13 Cooling-tower degradation                38/38
+S14 Rack inlet sensor drift                  39/39
+S15 CRAH fan imbalance                       40/40
+S16 Cooling pump failure (trip)              41/41
+TOTAL 670/670

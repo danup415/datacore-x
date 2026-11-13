@@ -1,0 +1,13 @@
+{
+  "title": "DATACORE-X: health-aware economic MPC for data-centre cooling - simulation twin, controllers and experiments (v1.0.0)",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "creators": [
+    {"name": "Deshmukh, Anup", "affiliation": "Vishwakarma Institute of Technology, Pune, India"}
+  ],
+  "description": "MATLAB/Simulink simulation twin of an 8-rack air-cooled data hall (cross-verified against a Python surrogate), PI-HA-EMPC supervisory controller using live Health Index and RUL, experiment scripts E1-E6 with seeds and configuration, generated result tables, and the paper's LaTeX sources. All results are from simulation.",
+  "keywords": ["data centre cooling", "economic MPC", "health-aware control", "remaining useful life", "predictive maintenance", "digital twin", "MATLAB", "Simulink"],
+  "related_identifiers": [],
+  "notes": "Reproduce with run_all.m (see REPRODUCE.md). Weather data are downloaded from the Open-Meteo historical archive (ERA5-based)."
+}

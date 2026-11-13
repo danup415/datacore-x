@@ -1,0 +1,31 @@
+{
+  "custom": {},
+  "params": { "asset": "", "preset": "datahall", "host": "http://localhost:8000" },
+  "propConfig": {
+    "params.asset": { "paramDirection": "input", "persistent": true },
+    "params.preset": { "paramDirection": "input", "persistent": true },
+    "params.host": { "paramDirection": "input", "persistent": true }
+  },
+  "props": { "defaultSize": { "height": 860, "width": 1500 } },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": { "name": "root" },
+    "props": { "direction": "column" },
+    "children": [
+      {
+        "type": "ia.display.iframe",
+        "meta": { "name": "DCX_3D_Twin" },
+        "position": { "grow": 1, "basis": "800px" },
+        "propConfig": {
+          "props.src": {
+            "binding": {
+              "type": "expr",
+              "config": { "expression": "{view.params.host} + '/?embed=1&view=' + {view.params.preset} + if(len({view.params.asset}) > 0, '&asset=' + {view.params.asset}, '')" }
+            }
+          }
+        },
+        "props": { "src": "" }
+      }
+    ]
+  }
+}

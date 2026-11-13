@@ -1,0 +1,218 @@
+asset_id,asset_type,key,label,unit,ignition_path,opc_node,simulink_signal
+ZONE-CA,zone,temp_c,Zone temperature,°C,[DATACORE_X]DataHall/ZONE_CA/temp_c,ns=2;s=DCX.ZONE-CA.temp_c,DCX_ZONE_CA_temp_c
+ZONE-CA,zone,rh_pct,Relative humidity,%,[DATACORE_X]DataHall/ZONE_CA/rh_pct,ns=2;s=DCX.ZONE-CA.rh_pct,DCX_ZONE_CA_rh_pct
+ZONE-HA,zone,temp_c,Zone temperature,°C,[DATACORE_X]DataHall/ZONE_HA/temp_c,ns=2;s=DCX.ZONE-HA.temp_c,DCX_ZONE_HA_temp_c
+ZONE-HA,zone,rh_pct,Relative humidity,%,[DATACORE_X]DataHall/ZONE_HA/rh_pct,ns=2;s=DCX.ZONE-HA.rh_pct,DCX_ZONE_HA_rh_pct
+R-01,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_01/cpu_util,ns=2;s=DCX.R-01.cpu_util,DCX_R_01_cpu_util
+R-01,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_01/gpu_util,ns=2;s=DCX.R-01.gpu_util,DCX_R_01_gpu_util
+R-01,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_01/power_kw,ns=2;s=DCX.R-01.power_kw,DCX_R_01_power_kw
+R-01,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_01/inlet_c,ns=2;s=DCX.R-01.inlet_c,DCX_R_01_inlet_c
+R-01,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_01/outlet_c,ns=2;s=DCX.R-01.outlet_c,DCX_R_01_outlet_c
+R-01,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_01/airflow_m3s,ns=2;s=DCX.R-01.airflow_m3s,DCX_R_01_airflow_m3s
+R-01,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_01/heat_kw,ns=2;s=DCX.R-01.heat_kw,DCX_R_01_heat_kw
+R-02,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_02/cpu_util,ns=2;s=DCX.R-02.cpu_util,DCX_R_02_cpu_util
+R-02,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_02/gpu_util,ns=2;s=DCX.R-02.gpu_util,DCX_R_02_gpu_util
+R-02,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_02/power_kw,ns=2;s=DCX.R-02.power_kw,DCX_R_02_power_kw
+R-02,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_02/inlet_c,ns=2;s=DCX.R-02.inlet_c,DCX_R_02_inlet_c
+R-02,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_02/outlet_c,ns=2;s=DCX.R-02.outlet_c,DCX_R_02_outlet_c
+R-02,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_02/airflow_m3s,ns=2;s=DCX.R-02.airflow_m3s,DCX_R_02_airflow_m3s
+R-02,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_02/heat_kw,ns=2;s=DCX.R-02.heat_kw,DCX_R_02_heat_kw
+R-03,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_03/cpu_util,ns=2;s=DCX.R-03.cpu_util,DCX_R_03_cpu_util
+R-03,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_03/gpu_util,ns=2;s=DCX.R-03.gpu_util,DCX_R_03_gpu_util
+R-03,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_03/power_kw,ns=2;s=DCX.R-03.power_kw,DCX_R_03_power_kw
+R-03,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_03/inlet_c,ns=2;s=DCX.R-03.inlet_c,DCX_R_03_inlet_c
+R-03,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_03/outlet_c,ns=2;s=DCX.R-03.outlet_c,DCX_R_03_outlet_c
+R-03,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_03/airflow_m3s,ns=2;s=DCX.R-03.airflow_m3s,DCX_R_03_airflow_m3s
+R-03,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_03/heat_kw,ns=2;s=DCX.R-03.heat_kw,DCX_R_03_heat_kw
+R-04,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_04/cpu_util,ns=2;s=DCX.R-04.cpu_util,DCX_R_04_cpu_util
+R-04,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_04/gpu_util,ns=2;s=DCX.R-04.gpu_util,DCX_R_04_gpu_util
+R-04,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_04/power_kw,ns=2;s=DCX.R-04.power_kw,DCX_R_04_power_kw
+R-04,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_04/inlet_c,ns=2;s=DCX.R-04.inlet_c,DCX_R_04_inlet_c
+R-04,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_04/outlet_c,ns=2;s=DCX.R-04.outlet_c,DCX_R_04_outlet_c
+R-04,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_04/airflow_m3s,ns=2;s=DCX.R-04.airflow_m3s,DCX_R_04_airflow_m3s
+R-04,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_04/heat_kw,ns=2;s=DCX.R-04.heat_kw,DCX_R_04_heat_kw
+R-05,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_05/cpu_util,ns=2;s=DCX.R-05.cpu_util,DCX_R_05_cpu_util
+R-05,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_05/gpu_util,ns=2;s=DCX.R-05.gpu_util,DCX_R_05_gpu_util
+R-05,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_05/power_kw,ns=2;s=DCX.R-05.power_kw,DCX_R_05_power_kw
+R-05,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_05/inlet_c,ns=2;s=DCX.R-05.inlet_c,DCX_R_05_inlet_c
+R-05,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_05/outlet_c,ns=2;s=DCX.R-05.outlet_c,DCX_R_05_outlet_c
+R-05,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_05/airflow_m3s,ns=2;s=DCX.R-05.airflow_m3s,DCX_R_05_airflow_m3s
+R-05,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_05/heat_kw,ns=2;s=DCX.R-05.heat_kw,DCX_R_05_heat_kw
+R-06,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_06/cpu_util,ns=2;s=DCX.R-06.cpu_util,DCX_R_06_cpu_util
+R-06,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_06/gpu_util,ns=2;s=DCX.R-06.gpu_util,DCX_R_06_gpu_util
+R-06,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_06/power_kw,ns=2;s=DCX.R-06.power_kw,DCX_R_06_power_kw
+R-06,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_06/inlet_c,ns=2;s=DCX.R-06.inlet_c,DCX_R_06_inlet_c
+R-06,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_06/outlet_c,ns=2;s=DCX.R-06.outlet_c,DCX_R_06_outlet_c
+R-06,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_06/airflow_m3s,ns=2;s=DCX.R-06.airflow_m3s,DCX_R_06_airflow_m3s
+R-06,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_06/heat_kw,ns=2;s=DCX.R-06.heat_kw,DCX_R_06_heat_kw
+R-07,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_07/cpu_util,ns=2;s=DCX.R-07.cpu_util,DCX_R_07_cpu_util
+R-07,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_07/gpu_util,ns=2;s=DCX.R-07.gpu_util,DCX_R_07_gpu_util
+R-07,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_07/power_kw,ns=2;s=DCX.R-07.power_kw,DCX_R_07_power_kw
+R-07,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_07/inlet_c,ns=2;s=DCX.R-07.inlet_c,DCX_R_07_inlet_c
+R-07,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_07/outlet_c,ns=2;s=DCX.R-07.outlet_c,DCX_R_07_outlet_c
+R-07,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_07/airflow_m3s,ns=2;s=DCX.R-07.airflow_m3s,DCX_R_07_airflow_m3s
+R-07,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_07/heat_kw,ns=2;s=DCX.R-07.heat_kw,DCX_R_07_heat_kw
+R-08,rack,cpu_util,CPU utilisation,%,[DATACORE_X]DataHall/R_08/cpu_util,ns=2;s=DCX.R-08.cpu_util,DCX_R_08_cpu_util
+R-08,rack,gpu_util,GPU utilisation,%,[DATACORE_X]DataHall/R_08/gpu_util,ns=2;s=DCX.R-08.gpu_util,DCX_R_08_gpu_util
+R-08,rack,power_kw,Rack power,kW,[DATACORE_X]DataHall/R_08/power_kw,ns=2;s=DCX.R-08.power_kw,DCX_R_08_power_kw
+R-08,rack,inlet_c,Inlet temperature,°C,[DATACORE_X]DataHall/R_08/inlet_c,ns=2;s=DCX.R-08.inlet_c,DCX_R_08_inlet_c
+R-08,rack,outlet_c,Outlet temperature,°C,[DATACORE_X]DataHall/R_08/outlet_c,ns=2;s=DCX.R-08.outlet_c,DCX_R_08_outlet_c
+R-08,rack,airflow_m3s,Server airflow,m³/s,[DATACORE_X]DataHall/R_08/airflow_m3s,ns=2;s=DCX.R-08.airflow_m3s,DCX_R_08_airflow_m3s
+R-08,rack,heat_kw,Heat generation,kW,[DATACORE_X]DataHall/R_08/heat_kw,ns=2;s=DCX.R-08.heat_kw,DCX_R_08_heat_kw
+PDU-A,pdu,load_kw,Load,kW,[DATACORE_X]Electrical/PDU_A/load_kw,ns=2;s=DCX.PDU-A.load_kw,DCX_PDU_A_load_kw
+PDU-A,pdu,load_pct,Loading,%,[DATACORE_X]Electrical/PDU_A/load_pct,ns=2;s=DCX.PDU-A.load_pct,DCX_PDU_A_load_pct
+PDU-A,pdu,current_l1_a,Current L1,A,[DATACORE_X]Electrical/PDU_A/current_l1_a,ns=2;s=DCX.PDU-A.current_l1_a,DCX_PDU_A_current_l1_a
+PDU-A,pdu,current_l2_a,Current L2,A,[DATACORE_X]Electrical/PDU_A/current_l2_a,ns=2;s=DCX.PDU-A.current_l2_a,DCX_PDU_A_current_l2_a
+PDU-A,pdu,current_l3_a,Current L3,A,[DATACORE_X]Electrical/PDU_A/current_l3_a,ns=2;s=DCX.PDU-A.current_l3_a,DCX_PDU_A_current_l3_a
+PDU-A,pdu,imbalance_pct,Phase imbalance,%,[DATACORE_X]Electrical/PDU_A/imbalance_pct,ns=2;s=DCX.PDU-A.imbalance_pct,DCX_PDU_A_imbalance_pct
+PDU-B,pdu,load_kw,Load,kW,[DATACORE_X]Electrical/PDU_B/load_kw,ns=2;s=DCX.PDU-B.load_kw,DCX_PDU_B_load_kw
+PDU-B,pdu,load_pct,Loading,%,[DATACORE_X]Electrical/PDU_B/load_pct,ns=2;s=DCX.PDU-B.load_pct,DCX_PDU_B_load_pct
+PDU-B,pdu,current_l1_a,Current L1,A,[DATACORE_X]Electrical/PDU_B/current_l1_a,ns=2;s=DCX.PDU-B.current_l1_a,DCX_PDU_B_current_l1_a
+PDU-B,pdu,current_l2_a,Current L2,A,[DATACORE_X]Electrical/PDU_B/current_l2_a,ns=2;s=DCX.PDU-B.current_l2_a,DCX_PDU_B_current_l2_a
+PDU-B,pdu,current_l3_a,Current L3,A,[DATACORE_X]Electrical/PDU_B/current_l3_a,ns=2;s=DCX.PDU-B.current_l3_a,DCX_PDU_B_current_l3_a
+PDU-B,pdu,imbalance_pct,Phase imbalance,%,[DATACORE_X]Electrical/PDU_B/imbalance_pct,ns=2;s=DCX.PDU-B.imbalance_pct,DCX_PDU_B_imbalance_pct
+CRAH-01,crah,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CRAH_01/fan_speed_pct,ns=2;s=DCX.CRAH-01.fan_speed_pct,DCX_CRAH_01_fan_speed_pct
+CRAH-01,crah,airflow_m3s,Supply airflow,m³/s,[DATACORE_X]Cooling/CRAH_01/airflow_m3s,ns=2;s=DCX.CRAH-01.airflow_m3s,DCX_CRAH_01_airflow_m3s
+CRAH-01,crah,supply_c,Supply air temperature,°C,[DATACORE_X]Cooling/CRAH_01/supply_c,ns=2;s=DCX.CRAH-01.supply_c,DCX_CRAH_01_supply_c
+CRAH-01,crah,return_c,Return air temperature,°C,[DATACORE_X]Cooling/CRAH_01/return_c,ns=2;s=DCX.CRAH-01.return_c,DCX_CRAH_01_return_c
+CRAH-01,crah,valve_pct,CHW valve position,%,[DATACORE_X]Cooling/CRAH_01/valve_pct,ns=2;s=DCX.CRAH-01.valve_pct,DCX_CRAH_01_valve_pct
+CRAH-01,crah,chw_flow_ls,CHW coil flow,L/s,[DATACORE_X]Cooling/CRAH_01/chw_flow_ls,ns=2;s=DCX.CRAH-01.chw_flow_ls,DCX_CRAH_01_chw_flow_ls
+CRAH-01,crah,coil_kw,Coil duty,kW,[DATACORE_X]Cooling/CRAH_01/coil_kw,ns=2;s=DCX.CRAH-01.coil_kw,DCX_CRAH_01_coil_kw
+CRAH-01,crah,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CRAH_01/fan_kw,ns=2;s=DCX.CRAH-01.fan_kw,DCX_CRAH_01_fan_kw
+CRAH-01,crah,vib_mms,Fan vibration,mm/s,[DATACORE_X]Cooling/CRAH_01/vib_mms,ns=2;s=DCX.CRAH-01.vib_mms,DCX_CRAH_01_vib_mms
+CRAH-02,crah,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CRAH_02/fan_speed_pct,ns=2;s=DCX.CRAH-02.fan_speed_pct,DCX_CRAH_02_fan_speed_pct
+CRAH-02,crah,airflow_m3s,Supply airflow,m³/s,[DATACORE_X]Cooling/CRAH_02/airflow_m3s,ns=2;s=DCX.CRAH-02.airflow_m3s,DCX_CRAH_02_airflow_m3s
+CRAH-02,crah,supply_c,Supply air temperature,°C,[DATACORE_X]Cooling/CRAH_02/supply_c,ns=2;s=DCX.CRAH-02.supply_c,DCX_CRAH_02_supply_c
+CRAH-02,crah,return_c,Return air temperature,°C,[DATACORE_X]Cooling/CRAH_02/return_c,ns=2;s=DCX.CRAH-02.return_c,DCX_CRAH_02_return_c
+CRAH-02,crah,valve_pct,CHW valve position,%,[DATACORE_X]Cooling/CRAH_02/valve_pct,ns=2;s=DCX.CRAH-02.valve_pct,DCX_CRAH_02_valve_pct
+CRAH-02,crah,chw_flow_ls,CHW coil flow,L/s,[DATACORE_X]Cooling/CRAH_02/chw_flow_ls,ns=2;s=DCX.CRAH-02.chw_flow_ls,DCX_CRAH_02_chw_flow_ls
+CRAH-02,crah,coil_kw,Coil duty,kW,[DATACORE_X]Cooling/CRAH_02/coil_kw,ns=2;s=DCX.CRAH-02.coil_kw,DCX_CRAH_02_coil_kw
+CRAH-02,crah,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CRAH_02/fan_kw,ns=2;s=DCX.CRAH-02.fan_kw,DCX_CRAH_02_fan_kw
+CRAH-02,crah,vib_mms,Fan vibration,mm/s,[DATACORE_X]Cooling/CRAH_02/vib_mms,ns=2;s=DCX.CRAH-02.vib_mms,DCX_CRAH_02_vib_mms
+CRAH-03,crah,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CRAH_03/fan_speed_pct,ns=2;s=DCX.CRAH-03.fan_speed_pct,DCX_CRAH_03_fan_speed_pct
+CRAH-03,crah,airflow_m3s,Supply airflow,m³/s,[DATACORE_X]Cooling/CRAH_03/airflow_m3s,ns=2;s=DCX.CRAH-03.airflow_m3s,DCX_CRAH_03_airflow_m3s
+CRAH-03,crah,supply_c,Supply air temperature,°C,[DATACORE_X]Cooling/CRAH_03/supply_c,ns=2;s=DCX.CRAH-03.supply_c,DCX_CRAH_03_supply_c
+CRAH-03,crah,return_c,Return air temperature,°C,[DATACORE_X]Cooling/CRAH_03/return_c,ns=2;s=DCX.CRAH-03.return_c,DCX_CRAH_03_return_c
+CRAH-03,crah,valve_pct,CHW valve position,%,[DATACORE_X]Cooling/CRAH_03/valve_pct,ns=2;s=DCX.CRAH-03.valve_pct,DCX_CRAH_03_valve_pct
+CRAH-03,crah,chw_flow_ls,CHW coil flow,L/s,[DATACORE_X]Cooling/CRAH_03/chw_flow_ls,ns=2;s=DCX.CRAH-03.chw_flow_ls,DCX_CRAH_03_chw_flow_ls
+CRAH-03,crah,coil_kw,Coil duty,kW,[DATACORE_X]Cooling/CRAH_03/coil_kw,ns=2;s=DCX.CRAH-03.coil_kw,DCX_CRAH_03_coil_kw
+CRAH-03,crah,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CRAH_03/fan_kw,ns=2;s=DCX.CRAH-03.fan_kw,DCX_CRAH_03_fan_kw
+CRAH-03,crah,vib_mms,Fan vibration,mm/s,[DATACORE_X]Cooling/CRAH_03/vib_mms,ns=2;s=DCX.CRAH-03.vib_mms,DCX_CRAH_03_vib_mms
+CRAH-04,crah,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CRAH_04/fan_speed_pct,ns=2;s=DCX.CRAH-04.fan_speed_pct,DCX_CRAH_04_fan_speed_pct
+CRAH-04,crah,airflow_m3s,Supply airflow,m³/s,[DATACORE_X]Cooling/CRAH_04/airflow_m3s,ns=2;s=DCX.CRAH-04.airflow_m3s,DCX_CRAH_04_airflow_m3s
+CRAH-04,crah,supply_c,Supply air temperature,°C,[DATACORE_X]Cooling/CRAH_04/supply_c,ns=2;s=DCX.CRAH-04.supply_c,DCX_CRAH_04_supply_c
+CRAH-04,crah,return_c,Return air temperature,°C,[DATACORE_X]Cooling/CRAH_04/return_c,ns=2;s=DCX.CRAH-04.return_c,DCX_CRAH_04_return_c
+CRAH-04,crah,valve_pct,CHW valve position,%,[DATACORE_X]Cooling/CRAH_04/valve_pct,ns=2;s=DCX.CRAH-04.valve_pct,DCX_CRAH_04_valve_pct
+CRAH-04,crah,chw_flow_ls,CHW coil flow,L/s,[DATACORE_X]Cooling/CRAH_04/chw_flow_ls,ns=2;s=DCX.CRAH-04.chw_flow_ls,DCX_CRAH_04_chw_flow_ls
+CRAH-04,crah,coil_kw,Coil duty,kW,[DATACORE_X]Cooling/CRAH_04/coil_kw,ns=2;s=DCX.CRAH-04.coil_kw,DCX_CRAH_04_coil_kw
+CRAH-04,crah,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CRAH_04/fan_kw,ns=2;s=DCX.CRAH-04.fan_kw,DCX_CRAH_04_fan_kw
+CRAH-04,crah,vib_mms,Fan vibration,mm/s,[DATACORE_X]Cooling/CRAH_04/vib_mms,ns=2;s=DCX.CRAH-04.vib_mms,DCX_CRAH_04_vib_mms
+CH-01,chiller,load_kw,Evaporator load,kW,[DATACORE_X]Cooling/CH_01/load_kw,ns=2;s=DCX.CH-01.load_kw,DCX_CH_01_load_kw
+CH-01,chiller,plr_pct,Part-load ratio,%,[DATACORE_X]Cooling/CH_01/plr_pct,ns=2;s=DCX.CH-01.plr_pct,DCX_CH_01_plr_pct
+CH-01,chiller,cop,COP,-,[DATACORE_X]Cooling/CH_01/cop,ns=2;s=DCX.CH-01.cop,DCX_CH_01_cop
+CH-01,chiller,power_kw,Compressor power,kW,[DATACORE_X]Cooling/CH_01/power_kw,ns=2;s=DCX.CH-01.power_kw,DCX_CH_01_power_kw
+CH-01,chiller,chws_c,CHW leaving temperature,°C,[DATACORE_X]Cooling/CH_01/chws_c,ns=2;s=DCX.CH-01.chws_c,DCX_CH_01_chws_c
+CH-01,chiller,chwr_c,CHW entering temperature,°C,[DATACORE_X]Cooling/CH_01/chwr_c,ns=2;s=DCX.CH-01.chwr_c,DCX_CH_01_chwr_c
+CH-01,chiller,cwe_c,Condenser water entering,°C,[DATACORE_X]Cooling/CH_01/cwe_c,ns=2;s=DCX.CH-01.cwe_c,DCX_CH_01_cwe_c
+CH-01,chiller,cwl_c,Condenser water leaving,°C,[DATACORE_X]Cooling/CH_01/cwl_c,ns=2;s=DCX.CH-01.cwl_c,DCX_CH_01_cwl_c
+CH-01,chiller,capacity_kw,Available capacity,kW,[DATACORE_X]Cooling/CH_01/capacity_kw,ns=2;s=DCX.CH-01.capacity_kw,DCX_CH_01_capacity_kw
+CH-02,chiller,load_kw,Evaporator load,kW,[DATACORE_X]Cooling/CH_02/load_kw,ns=2;s=DCX.CH-02.load_kw,DCX_CH_02_load_kw
+CH-02,chiller,plr_pct,Part-load ratio,%,[DATACORE_X]Cooling/CH_02/plr_pct,ns=2;s=DCX.CH-02.plr_pct,DCX_CH_02_plr_pct
+CH-02,chiller,cop,COP,-,[DATACORE_X]Cooling/CH_02/cop,ns=2;s=DCX.CH-02.cop,DCX_CH_02_cop
+CH-02,chiller,power_kw,Compressor power,kW,[DATACORE_X]Cooling/CH_02/power_kw,ns=2;s=DCX.CH-02.power_kw,DCX_CH_02_power_kw
+CH-02,chiller,chws_c,CHW leaving temperature,°C,[DATACORE_X]Cooling/CH_02/chws_c,ns=2;s=DCX.CH-02.chws_c,DCX_CH_02_chws_c
+CH-02,chiller,chwr_c,CHW entering temperature,°C,[DATACORE_X]Cooling/CH_02/chwr_c,ns=2;s=DCX.CH-02.chwr_c,DCX_CH_02_chwr_c
+CH-02,chiller,cwe_c,Condenser water entering,°C,[DATACORE_X]Cooling/CH_02/cwe_c,ns=2;s=DCX.CH-02.cwe_c,DCX_CH_02_cwe_c
+CH-02,chiller,cwl_c,Condenser water leaving,°C,[DATACORE_X]Cooling/CH_02/cwl_c,ns=2;s=DCX.CH-02.cwl_c,DCX_CH_02_cwl_c
+CH-02,chiller,capacity_kw,Available capacity,kW,[DATACORE_X]Cooling/CH_02/capacity_kw,ns=2;s=DCX.CH-02.capacity_kw,DCX_CH_02_capacity_kw
+P-01,pump,speed_pct,Speed,%,[DATACORE_X]Cooling/P_01/speed_pct,ns=2;s=DCX.P-01.speed_pct,DCX_P_01_speed_pct
+P-01,pump,flow_ls,Flow,L/s,[DATACORE_X]Cooling/P_01/flow_ls,ns=2;s=DCX.P-01.flow_ls,DCX_P_01_flow_ls
+P-01,pump,head_kpa,Differential head,kPa,[DATACORE_X]Cooling/P_01/head_kpa,ns=2;s=DCX.P-01.head_kpa,DCX_P_01_head_kpa
+P-01,pump,power_kw,Shaft power,kW,[DATACORE_X]Cooling/P_01/power_kw,ns=2;s=DCX.P-01.power_kw,DCX_P_01_power_kw
+P-01,pump,eff_pct,Hydraulic efficiency,%,[DATACORE_X]Cooling/P_01/eff_pct,ns=2;s=DCX.P-01.eff_pct,DCX_P_01_eff_pct
+P-01,pump,vib_mms,Vibration (RMS),mm/s,[DATACORE_X]Cooling/P_01/vib_mms,ns=2;s=DCX.P-01.vib_mms,DCX_P_01_vib_mms
+P-01,pump,current_a,Motor current,A,[DATACORE_X]Cooling/P_01/current_a,ns=2;s=DCX.P-01.current_a,DCX_P_01_current_a
+P-02,pump,speed_pct,Speed,%,[DATACORE_X]Cooling/P_02/speed_pct,ns=2;s=DCX.P-02.speed_pct,DCX_P_02_speed_pct
+P-02,pump,flow_ls,Flow,L/s,[DATACORE_X]Cooling/P_02/flow_ls,ns=2;s=DCX.P-02.flow_ls,DCX_P_02_flow_ls
+P-02,pump,head_kpa,Differential head,kPa,[DATACORE_X]Cooling/P_02/head_kpa,ns=2;s=DCX.P-02.head_kpa,DCX_P_02_head_kpa
+P-02,pump,power_kw,Shaft power,kW,[DATACORE_X]Cooling/P_02/power_kw,ns=2;s=DCX.P-02.power_kw,DCX_P_02_power_kw
+P-02,pump,eff_pct,Hydraulic efficiency,%,[DATACORE_X]Cooling/P_02/eff_pct,ns=2;s=DCX.P-02.eff_pct,DCX_P_02_eff_pct
+P-02,pump,vib_mms,Vibration (RMS),mm/s,[DATACORE_X]Cooling/P_02/vib_mms,ns=2;s=DCX.P-02.vib_mms,DCX_P_02_vib_mms
+P-02,pump,current_a,Motor current,A,[DATACORE_X]Cooling/P_02/current_a,ns=2;s=DCX.P-02.current_a,DCX_P_02_current_a
+P-03,pump,speed_pct,Speed,%,[DATACORE_X]Cooling/P_03/speed_pct,ns=2;s=DCX.P-03.speed_pct,DCX_P_03_speed_pct
+P-03,pump,flow_ls,Flow,L/s,[DATACORE_X]Cooling/P_03/flow_ls,ns=2;s=DCX.P-03.flow_ls,DCX_P_03_flow_ls
+P-03,pump,head_kpa,Differential head,kPa,[DATACORE_X]Cooling/P_03/head_kpa,ns=2;s=DCX.P-03.head_kpa,DCX_P_03_head_kpa
+P-03,pump,power_kw,Shaft power,kW,[DATACORE_X]Cooling/P_03/power_kw,ns=2;s=DCX.P-03.power_kw,DCX_P_03_power_kw
+P-03,pump,eff_pct,Hydraulic efficiency,%,[DATACORE_X]Cooling/P_03/eff_pct,ns=2;s=DCX.P-03.eff_pct,DCX_P_03_eff_pct
+P-03,pump,vib_mms,Vibration (RMS),mm/s,[DATACORE_X]Cooling/P_03/vib_mms,ns=2;s=DCX.P-03.vib_mms,DCX_P_03_vib_mms
+P-03,pump,current_a,Motor current,A,[DATACORE_X]Cooling/P_03/current_a,ns=2;s=DCX.P-03.current_a,DCX_P_03_current_a
+HX-01,hx,duty_kw,Heat duty,kW,[DATACORE_X]Cooling/HX_01/duty_kw,ns=2;s=DCX.HX-01.duty_kw,DCX_HX_01_duty_kw
+HX-01,hx,effectiveness_pct,Effectiveness,%,[DATACORE_X]Cooling/HX_01/effectiveness_pct,ns=2;s=DCX.HX-01.effectiveness_pct,DCX_HX_01_effectiveness_pct
+HX-01,hx,chw_in_c,CHW in,°C,[DATACORE_X]Cooling/HX_01/chw_in_c,ns=2;s=DCX.HX-01.chw_in_c,DCX_HX_01_chw_in_c
+HX-01,hx,chw_out_c,CHW out,°C,[DATACORE_X]Cooling/HX_01/chw_out_c,ns=2;s=DCX.HX-01.chw_out_c,DCX_HX_01_chw_out_c
+HX-01,hx,cw_in_c,CW in,°C,[DATACORE_X]Cooling/HX_01/cw_in_c,ns=2;s=DCX.HX-01.cw_in_c,DCX_HX_01_cw_in_c
+HX-01,hx,cw_out_c,CW out,°C,[DATACORE_X]Cooling/HX_01/cw_out_c,ns=2;s=DCX.HX-01.cw_out_c,DCX_HX_01_cw_out_c
+HX-01,hx,ua_kwk,Effective UA,kW/K,[DATACORE_X]Cooling/HX_01/ua_kwk,ns=2;s=DCX.HX-01.ua_kwk,DCX_HX_01_ua_kwk
+CT-01,tower,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CT_01/fan_speed_pct,ns=2;s=DCX.CT-01.fan_speed_pct,DCX_CT_01_fan_speed_pct
+CT-01,tower,leaving_c,Leaving water,°C,[DATACORE_X]Cooling/CT_01/leaving_c,ns=2;s=DCX.CT-01.leaving_c,DCX_CT_01_leaving_c
+CT-01,tower,entering_c,Entering water,°C,[DATACORE_X]Cooling/CT_01/entering_c,ns=2;s=DCX.CT-01.entering_c,DCX_CT_01_entering_c
+CT-01,tower,heat_rej_kw,Heat rejection,kW,[DATACORE_X]Cooling/CT_01/heat_rej_kw,ns=2;s=DCX.CT-01.heat_rej_kw,DCX_CT_01_heat_rej_kw
+CT-01,tower,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CT_01/fan_kw,ns=2;s=DCX.CT-01.fan_kw,DCX_CT_01_fan_kw
+CT-01,tower,approach_k,Approach,K,[DATACORE_X]Cooling/CT_01/approach_k,ns=2;s=DCX.CT-01.approach_k,DCX_CT_01_approach_k
+CT-01,tower,wetbulb_c,Ambient wet-bulb,°C,[DATACORE_X]Cooling/CT_01/wetbulb_c,ns=2;s=DCX.CT-01.wetbulb_c,DCX_CT_01_wetbulb_c
+CT-02,tower,fan_speed_pct,Fan speed,%,[DATACORE_X]Cooling/CT_02/fan_speed_pct,ns=2;s=DCX.CT-02.fan_speed_pct,DCX_CT_02_fan_speed_pct
+CT-02,tower,leaving_c,Leaving water,°C,[DATACORE_X]Cooling/CT_02/leaving_c,ns=2;s=DCX.CT-02.leaving_c,DCX_CT_02_leaving_c
+CT-02,tower,entering_c,Entering water,°C,[DATACORE_X]Cooling/CT_02/entering_c,ns=2;s=DCX.CT-02.entering_c,DCX_CT_02_entering_c
+CT-02,tower,heat_rej_kw,Heat rejection,kW,[DATACORE_X]Cooling/CT_02/heat_rej_kw,ns=2;s=DCX.CT-02.heat_rej_kw,DCX_CT_02_heat_rej_kw
+CT-02,tower,fan_kw,Fan power,kW,[DATACORE_X]Cooling/CT_02/fan_kw,ns=2;s=DCX.CT-02.fan_kw,DCX_CT_02_fan_kw
+CT-02,tower,approach_k,Approach,K,[DATACORE_X]Cooling/CT_02/approach_k,ns=2;s=DCX.CT-02.approach_k,DCX_CT_02_approach_k
+CT-02,tower,wetbulb_c,Ambient wet-bulb,°C,[DATACORE_X]Cooling/CT_02/wetbulb_c,ns=2;s=DCX.CT-02.wetbulb_c,DCX_CT_02_wetbulb_c
+TX-01,transformer,load_kva,Load,kVA,[DATACORE_X]Electrical/TX_01/load_kva,ns=2;s=DCX.TX-01.load_kva,DCX_TX_01_load_kva
+TX-01,transformer,load_pct,Loading,%,[DATACORE_X]Electrical/TX_01/load_pct,ns=2;s=DCX.TX-01.load_pct,DCX_TX_01_load_pct
+TX-01,transformer,losses_kw,Losses,kW,[DATACORE_X]Electrical/TX_01/losses_kw,ns=2;s=DCX.TX-01.losses_kw,DCX_TX_01_losses_kw
+TX-01,transformer,winding_c,Winding hot-spot,°C,[DATACORE_X]Electrical/TX_01/winding_c,ns=2;s=DCX.TX-01.winding_c,DCX_TX_01_winding_c
+TX-01,transformer,lv_voltage_v,LV voltage,V,[DATACORE_X]Electrical/TX_01/lv_voltage_v,ns=2;s=DCX.TX-01.lv_voltage_v,DCX_TX_01_lv_voltage_v
+GEN-01,generator,power_kw,Output power,kW,[DATACORE_X]Electrical/GEN_01/power_kw,ns=2;s=DCX.GEN-01.power_kw,DCX_GEN_01_power_kw
+GEN-01,generator,frequency_hz,Frequency,Hz,[DATACORE_X]Electrical/GEN_01/frequency_hz,ns=2;s=DCX.GEN-01.frequency_hz,DCX_GEN_01_frequency_hz
+GEN-01,generator,fuel_pct,Fuel level,%,[DATACORE_X]Electrical/GEN_01/fuel_pct,ns=2;s=DCX.GEN-01.fuel_pct,DCX_GEN_01_fuel_pct
+GEN-01,generator,run_s,Run time,s,[DATACORE_X]Electrical/GEN_01/run_s,ns=2;s=DCX.GEN-01.run_s,DCX_GEN_01_run_s
+SWG-01,switchgear,bus_voltage_v,Bus voltage,V,[DATACORE_X]Electrical/SWG_01/bus_voltage_v,ns=2;s=DCX.SWG-01.bus_voltage_v,DCX_SWG_01_bus_voltage_v
+SWG-01,switchgear,bus_current_a,Bus current,A,[DATACORE_X]Electrical/SWG_01/bus_current_a,ns=2;s=DCX.SWG-01.bus_current_a,DCX_SWG_01_bus_current_a
+SWG-01,switchgear,frequency_hz,Frequency,Hz,[DATACORE_X]Electrical/SWG_01/frequency_hz,ns=2;s=DCX.SWG-01.frequency_hz,DCX_SWG_01_frequency_hz
+SWG-01,switchgear,mech_load_kw,Mechanical bus load,kW,[DATACORE_X]Electrical/SWG_01/mech_load_kw,ns=2;s=DCX.SWG-01.mech_load_kw,DCX_SWG_01_mech_load_kw
+SWG-01,switchgear,source_code,"Source (0 none,1 utility,2 generator)",-,[DATACORE_X]Electrical/SWG_01/source_code,ns=2;s=DCX.SWG-01.source_code,DCX_SWG_01_source_code
+UPS-A,ups,load_kw,Output load,kW,[DATACORE_X]Electrical/UPS_A/load_kw,ns=2;s=DCX.UPS-A.load_kw,DCX_UPS_A_load_kw
+UPS-A,ups,load_pct,Loading,%,[DATACORE_X]Electrical/UPS_A/load_pct,ns=2;s=DCX.UPS-A.load_pct,DCX_UPS_A_load_pct
+UPS-A,ups,eff_pct,Efficiency,%,[DATACORE_X]Electrical/UPS_A/eff_pct,ns=2;s=DCX.UPS-A.eff_pct,DCX_UPS_A_eff_pct
+UPS-A,ups,losses_kw,Losses,kW,[DATACORE_X]Electrical/UPS_A/losses_kw,ns=2;s=DCX.UPS-A.losses_kw,DCX_UPS_A_losses_kw
+UPS-A,ups,input_v,Input voltage,V,[DATACORE_X]Electrical/UPS_A/input_v,ns=2;s=DCX.UPS-A.input_v,DCX_UPS_A_input_v
+UPS-A,ups,output_v,Output voltage,V,[DATACORE_X]Electrical/UPS_A/output_v,ns=2;s=DCX.UPS-A.output_v,DCX_UPS_A_output_v
+UPS-B,ups,load_kw,Output load,kW,[DATACORE_X]Electrical/UPS_B/load_kw,ns=2;s=DCX.UPS-B.load_kw,DCX_UPS_B_load_kw
+UPS-B,ups,load_pct,Loading,%,[DATACORE_X]Electrical/UPS_B/load_pct,ns=2;s=DCX.UPS-B.load_pct,DCX_UPS_B_load_pct
+UPS-B,ups,eff_pct,Efficiency,%,[DATACORE_X]Electrical/UPS_B/eff_pct,ns=2;s=DCX.UPS-B.eff_pct,DCX_UPS_B_eff_pct
+UPS-B,ups,losses_kw,Losses,kW,[DATACORE_X]Electrical/UPS_B/losses_kw,ns=2;s=DCX.UPS-B.losses_kw,DCX_UPS_B_losses_kw
+UPS-B,ups,input_v,Input voltage,V,[DATACORE_X]Electrical/UPS_B/input_v,ns=2;s=DCX.UPS-B.input_v,DCX_UPS_B_input_v
+UPS-B,ups,output_v,Output voltage,V,[DATACORE_X]Electrical/UPS_B/output_v,ns=2;s=DCX.UPS-B.output_v,DCX_UPS_B_output_v
+BAT-A,battery,soc_pct,State of charge,%,[DATACORE_X]Electrical/BAT_A/soc_pct,ns=2;s=DCX.BAT-A.soc_pct,DCX_BAT_A_soc_pct
+BAT-A,battery,soh_pct,State of health,%,[DATACORE_X]Electrical/BAT_A/soh_pct,ns=2;s=DCX.BAT-A.soh_pct,DCX_BAT_A_soh_pct
+BAT-A,battery,voltage_v,String voltage,V,[DATACORE_X]Electrical/BAT_A/voltage_v,ns=2;s=DCX.BAT-A.voltage_v,DCX_BAT_A_voltage_v
+BAT-A,battery,current_a,Current (+dis/-chg),A,[DATACORE_X]Electrical/BAT_A/current_a,ns=2;s=DCX.BAT-A.current_a,DCX_BAT_A_current_a
+BAT-A,battery,temp_c,Battery temperature,°C,[DATACORE_X]Electrical/BAT_A/temp_c,ns=2;s=DCX.BAT-A.temp_c,DCX_BAT_A_temp_c
+BAT-A,battery,runtime_min,Estimated runtime,min,[DATACORE_X]Electrical/BAT_A/runtime_min,ns=2;s=DCX.BAT-A.runtime_min,DCX_BAT_A_runtime_min
+BAT-A,battery,rint_mohm,Internal resistance,mΩ,[DATACORE_X]Electrical/BAT_A/rint_mohm,ns=2;s=DCX.BAT-A.rint_mohm,DCX_BAT_A_rint_mohm
+BAT-B,battery,soc_pct,State of charge,%,[DATACORE_X]Electrical/BAT_B/soc_pct,ns=2;s=DCX.BAT-B.soc_pct,DCX_BAT_B_soc_pct
+BAT-B,battery,soh_pct,State of health,%,[DATACORE_X]Electrical/BAT_B/soh_pct,ns=2;s=DCX.BAT-B.soh_pct,DCX_BAT_B_soh_pct
+BAT-B,battery,voltage_v,String voltage,V,[DATACORE_X]Electrical/BAT_B/voltage_v,ns=2;s=DCX.BAT-B.voltage_v,DCX_BAT_B_voltage_v
+BAT-B,battery,current_a,Current (+dis/-chg),A,[DATACORE_X]Electrical/BAT_B/current_a,ns=2;s=DCX.BAT-B.current_a,DCX_BAT_B_current_a
+BAT-B,battery,temp_c,Battery temperature,°C,[DATACORE_X]Electrical/BAT_B/temp_c,ns=2;s=DCX.BAT-B.temp_c,DCX_BAT_B_temp_c
+BAT-B,battery,runtime_min,Estimated runtime,min,[DATACORE_X]Electrical/BAT_B/runtime_min,ns=2;s=DCX.BAT-B.runtime_min,DCX_BAT_B_runtime_min
+BAT-B,battery,rint_mohm,Internal resistance,mΩ,[DATACORE_X]Electrical/BAT_B/rint_mohm,ns=2;s=DCX.BAT-B.rint_mohm,DCX_BAT_B_rint_mohm
+PIPE-CHWS,pipe,flow_ls,Flow,L/s,[DATACORE_X]Cooling/PIPE_CHWS/flow_ls,ns=2;s=DCX.PIPE-CHWS.flow_ls,DCX_PIPE_CHWS_flow_ls
+PIPE-CHWS,pipe,temp_c,Temperature,°C,[DATACORE_X]Cooling/PIPE_CHWS/temp_c,ns=2;s=DCX.PIPE-CHWS.temp_c,DCX_PIPE_CHWS_temp_c
+PIPE-CHWS,pipe,velocity_ms,Mean velocity,m/s,[DATACORE_X]Cooling/PIPE_CHWS/velocity_ms,ns=2;s=DCX.PIPE-CHWS.velocity_ms,DCX_PIPE_CHWS_velocity_ms
+PIPE-CHWR,pipe,flow_ls,Flow,L/s,[DATACORE_X]Cooling/PIPE_CHWR/flow_ls,ns=2;s=DCX.PIPE-CHWR.flow_ls,DCX_PIPE_CHWR_flow_ls
+PIPE-CHWR,pipe,temp_c,Temperature,°C,[DATACORE_X]Cooling/PIPE_CHWR/temp_c,ns=2;s=DCX.PIPE-CHWR.temp_c,DCX_PIPE_CHWR_temp_c
+PIPE-CHWR,pipe,velocity_ms,Mean velocity,m/s,[DATACORE_X]Cooling/PIPE_CHWR/velocity_ms,ns=2;s=DCX.PIPE-CHWR.velocity_ms,DCX_PIPE_CHWR_velocity_ms
+PIPE-CW,pipe,flow_ls,Flow,L/s,[DATACORE_X]Cooling/PIPE_CW/flow_ls,ns=2;s=DCX.PIPE-CW.flow_ls,DCX_PIPE_CW_flow_ls
+PIPE-CW,pipe,temp_c,Temperature,°C,[DATACORE_X]Cooling/PIPE_CW/temp_c,ns=2;s=DCX.PIPE-CW.temp_c,DCX_PIPE_CW_temp_c
+PIPE-CW,pipe,velocity_ms,Mean velocity,m/s,[DATACORE_X]Cooling/PIPE_CW/velocity_ms,ns=2;s=DCX.PIPE-CW.velocity_ms,DCX_PIPE_CW_velocity_ms

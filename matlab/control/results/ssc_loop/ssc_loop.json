@@ -1,0 +1,154 @@
+{
+  "summary": [
+    {
+      "energy_kwh": 816.45702117488781,
+      "peak_inlet_c": 26.597131163862954,
+      "t_above_27_s": 0,
+      "t_above_28_s": 0,
+      "unplanned_trips": 0,
+      "trip_h": null,
+      "changeover_h": 2.45,
+      "risk_zoneCD_s": 1580,
+      "mean_flow_lps": 4.8286066517409836,
+      "mean_dp_kpa": 179.99512142447037,
+      "mean_pump_kw": 1.3746220137350602,
+      "mode": "haempc",
+      "hydraulics": "rom",
+      "wall_s": 19.8378906,
+      "ssc_calls": 0,
+      "ssc_wall_s": 0
+    },
+    {
+      "energy_kwh": 816.45784218899894,
+      "peak_inlet_c": 26.597313770116013,
+      "t_above_27_s": 0,
+      "t_above_28_s": 0,
+      "unplanned_trips": 0,
+      "trip_h": null,
+      "changeover_h": 2.3833333333333333,
+      "risk_zoneCD_s": 1340,
+      "mean_flow_lps": 4.8336284465180093,
+      "mean_dp_kpa": 179.99613324711348,
+      "mean_pump_kw": 1.3749438226143973,
+      "mode": "haempc",
+      "hydraulics": "simscape",
+      "wall_s": 236.9123313,
+      "ssc_calls": 2161,
+      "ssc_wall_s": 213.45200010000013
+    },
+    {
+      "energy_kwh": 816.48509443397234,
+      "peak_inlet_c": 26.597888761948258,
+      "t_above_27_s": 0,
+      "t_above_28_s": 0,
+      "unplanned_trips": 1,
+      "trip_h": 2.85,
+      "changeover_h": null,
+      "risk_zoneCD_s": 3020,
+      "mean_flow_lps": 4.8286552292812672,
+      "mean_dp_kpa": 179.98594497595855,
+      "mean_pump_kw": 1.3798121278142377,
+      "mode": "empc",
+      "hydraulics": "rom",
+      "wall_s": 16.0572837,
+      "ssc_calls": 0,
+      "ssc_wall_s": 0
+    },
+    {
+      "energy_kwh": 816.49023694395351,
+      "peak_inlet_c": 26.597864713405219,
+      "t_above_27_s": 0,
+      "t_above_28_s": 0,
+      "unplanned_trips": 1,
+      "trip_h": 2.85,
+      "changeover_h": null,
+      "risk_zoneCD_s": 3020,
+      "mean_flow_lps": 4.83349520130406,
+      "mean_dp_kpa": 179.98531344927235,
+      "mean_pump_kw": 1.3809083678647138,
+      "mode": "empc",
+      "hydraulics": "simscape",
+      "wall_s": 210.9331708,
+      "ssc_calls": 2162,
+      "ssc_wall_s": 189.77582099999987
+    }
+  ],
+  "agreement": [
+    {
+      "mode": "haempc",
+      "flow_lps": {
+        "rms": 0.0048223360928689955,
+        "max": 0.0048223360928689729,
+        "rel_rms_pct": 0.099653843636843126
+      },
+      "dp_kpa": {
+        "rms": 0,
+        "max": 0,
+        "rel_rms_pct": 0
+      },
+      "speed": {
+        "rms": 0.00041014204084644055,
+        "max": 0.00041014204084643957,
+        "rel_rms_pct": 0.052828290547241474
+      },
+      "max_inlet_c": {
+        "rms": 1.9359257799347183E-5,
+        "max": 0.00028783237489804492,
+        "rel_rms_pct": 7.3054678381815168E-5
+      },
+      "Tchws_c": {
+        "rms": 7.8059662596001835E-5,
+        "max": 0.0019112747196565749,
+        "rel_rms_pct": 0.00035482154710597609
+      },
+      "pump_kw": {
+        "rms": 0.0075721084834061208,
+        "max": 0.071306980381723228,
+        "rel_rms_pct": 0.54995249418870129
+      },
+      "facility_kw": {
+        "rms": 0.0075952641242919422,
+        "max": 0.071766763967190172,
+        "rel_rms_pct": 0.00555501425332396
+      }
+    },
+    {
+      "mode": "empc",
+      "flow_lps": {
+        "rms": 0.0090047053757908984,
+        "max": 0.34710015529141458,
+        "rel_rms_pct": 0.18608312358758489
+      },
+      "dp_kpa": {
+        "rms": 0.041033775518952473,
+        "max": 1.6012280390376361,
+        "rel_rms_pct": 0.022797598690353364
+      },
+      "speed": {
+        "rms": 0.00041634989891570733,
+        "max": 0.0030983041423185975,
+        "rel_rms_pct": 0.053627284239273487
+      },
+      "max_inlet_c": {
+        "rms": 3.6616437425069788E-5,
+        "max": 0.00099435988746066073,
+        "rel_rms_pct": 0.0001381769414444424
+      },
+      "Tchws_c": {
+        "rms": 1.0963912441901293E-16,
+        "max": 3.5527136788005009E-15,
+        "rel_rms_pct": 4.9836571896290107E-16
+      },
+      "pump_kw": {
+        "rms": 0.0011839669006277515,
+        "max": 0.018223880779134394,
+        "rel_rms_pct": 0.085650017437215481
+      },
+      "facility_kw": {
+        "rms": 0.0032651782374704614,
+        "max": 0.13566188985407734,
+        "rel_rms_pct": 0.0023879793191796377
+      }
+    }
+  ]
+}

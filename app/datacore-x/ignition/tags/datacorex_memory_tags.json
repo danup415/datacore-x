@@ -1,0 +1,3955 @@
+{
+ "name": "DATACORE_X",
+ "tagType": "Folder",
+ "tags": [
+  {
+   "name": "Facility",
+   "tagType": "Folder",
+   "tags": [
+    {
+     "name": "it_load_kw",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kW",
+     "documentation": "IT load",
+     "valueSource": "memory"
+    },
+    {
+     "name": "facility_power_kw",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kW",
+     "documentation": "Facility power",
+     "valueSource": "memory"
+    },
+    {
+     "name": "cooling_power_kw",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kW",
+     "documentation": "Cooling power",
+     "valueSource": "memory"
+    },
+    {
+     "name": "elec_losses_kw",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kW",
+     "documentation": "Electrical losses",
+     "valueSource": "memory"
+    },
+    {
+     "name": "pue",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "-",
+     "documentation": "PUE",
+     "valueSource": "memory"
+    },
+    {
+     "name": "max_inlet_c",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "°C",
+     "documentation": "Max rack inlet",
+     "valueSource": "memory"
+    },
+    {
+     "name": "chws_c",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "°C",
+     "documentation": "CHW supply",
+     "valueSource": "memory"
+    },
+    {
+     "name": "chwr_c",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "°C",
+     "documentation": "CHW return",
+     "valueSource": "memory"
+    },
+    {
+     "name": "wetbulb_c",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "°C",
+     "documentation": "Ambient wet-bulb",
+     "valueSource": "memory"
+    },
+    {
+     "name": "energy_kwh",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kWh",
+     "documentation": "Facility energy (run)",
+     "valueSource": "memory"
+    },
+    {
+     "name": "it_energy_kwh",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "engUnit": "kWh",
+     "documentation": "IT energy (run)",
+     "valueSource": "memory"
+    }
+   ]
+  },
+  {
+   "name": "DataHall",
+   "tagType": "Folder",
+   "tags": [
+    {
+     "name": "ZONE_CA",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Zone temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "rh_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Relative humidity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Cold aisle (contained)"
+    },
+    {
+     "name": "ZONE_HA",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Zone temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "rh_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Relative humidity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Hot aisle / room return"
+    },
+    {
+     "name": "R_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 01"
+    },
+    {
+     "name": "R_02",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 02"
+    },
+    {
+     "name": "R_03",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 03"
+    },
+    {
+     "name": "R_04",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 04"
+    },
+    {
+     "name": "R_05",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 05"
+    },
+    {
+     "name": "R_06",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 06"
+    },
+    {
+     "name": "R_07",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 07"
+    },
+    {
+     "name": "R_08",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "cpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "gpu_util",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "GPU utilisation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Rack power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "inlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Inlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "outlet_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Outlet temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.000",
+       "documentation": "Server airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Heat generation",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Rack 08"
+    }
+   ]
+  },
+  {
+   "name": "Electrical",
+   "tagType": "Folder",
+   "tags": [
+    {
+     "name": "PDU_A",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "load_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Loading",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l1_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L1",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l2_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L2",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l3_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L3",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "imbalance_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Phase imbalance",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "PDU A (A-feed)"
+    },
+    {
+     "name": "PDU_B",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "load_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Loading",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l1_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L1",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l2_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L2",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_l3_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current L3",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "imbalance_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Phase imbalance",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "PDU B (B-feed)"
+    },
+    {
+     "name": "TX_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kva",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kVA",
+       "formatString": "#,##0.0",
+       "documentation": "Load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "load_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Loading",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "losses_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Losses",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "winding_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.0",
+       "documentation": "Winding hot-spot",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "lv_voltage_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "LV voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Transformer 11/0.415 kV"
+    },
+    {
+     "name": "GEN_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Output power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "frequency_hz",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "Hz",
+       "formatString": "#,##0.00",
+       "documentation": "Frequency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fuel_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fuel level",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "run_s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "s",
+       "formatString": "#,##0",
+       "documentation": "Run time",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Standby generator"
+    },
+    {
+     "name": "SWG_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "bus_voltage_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "Bus voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "bus_current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Bus current",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "frequency_hz",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "Hz",
+       "formatString": "#,##0.00",
+       "documentation": "Frequency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "mech_load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Mechanical bus load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "source_code",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "-",
+       "formatString": "#,##0",
+       "documentation": "Source (0 none,1 utility,2 generator)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Main LV switchgear"
+    },
+    {
+     "name": "UPS_A",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Output load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "load_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Loading",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "eff_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.00",
+       "documentation": "Efficiency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "losses_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Losses",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "input_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "Input voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "output_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "Output voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "UPS A"
+    },
+    {
+     "name": "UPS_B",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Output load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "load_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Loading",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "eff_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.00",
+       "documentation": "Efficiency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "losses_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Losses",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "input_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "Input voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "output_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "Output voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "UPS B"
+    },
+    {
+     "name": "BAT_A",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "soc_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "State of charge",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "soh_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "State of health",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "voltage_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "String voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current (+dis/-chg)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Battery temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "runtime_min",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "min",
+       "formatString": "#,##0.0",
+       "documentation": "Estimated runtime",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "rint_mohm",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mΩ",
+       "formatString": "#,##0.0",
+       "documentation": "Internal resistance",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Battery bank A"
+    },
+    {
+     "name": "BAT_B",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "soc_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "State of charge",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "soh_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "State of health",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "voltage_v",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "V",
+       "formatString": "#,##0.0",
+       "documentation": "String voltage",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Current (+dis/-chg)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Battery temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "runtime_min",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "min",
+       "formatString": "#,##0.0",
+       "documentation": "Estimated runtime",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "rint_mohm",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mΩ",
+       "formatString": "#,##0.0",
+       "documentation": "Internal resistance",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Battery bank B"
+    }
+   ]
+  },
+  {
+   "name": "Cooling",
+   "tagType": "Folder",
+   "tags": [
+    {
+     "name": "CRAH_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.00",
+       "documentation": "Supply airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "supply_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Supply air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "return_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Return air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "valve_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CHW valve position",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "CHW coil flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "coil_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Coil duty",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Fan vibration",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CRAH 01"
+    },
+    {
+     "name": "CRAH_02",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.00",
+       "documentation": "Supply airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "supply_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Supply air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "return_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Return air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "valve_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CHW valve position",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "CHW coil flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "coil_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Coil duty",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Fan vibration",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CRAH 02"
+    },
+    {
+     "name": "CRAH_03",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.00",
+       "documentation": "Supply airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "supply_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Supply air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "return_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Return air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "valve_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CHW valve position",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "CHW coil flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "coil_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Coil duty",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Fan vibration",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CRAH 03"
+    },
+    {
+     "name": "CRAH_04",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "airflow_m3s",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m³/s",
+       "formatString": "#,##0.00",
+       "documentation": "Supply airflow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "supply_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Supply air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "return_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Return air temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "valve_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "CHW valve position",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "CHW coil flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "coil_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Coil duty",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Fan vibration",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CRAH 04"
+    },
+    {
+     "name": "CH_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Evaporator load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "plr_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Part-load ratio",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cop",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "-",
+       "formatString": "#,##0.00",
+       "documentation": "COP",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Compressor power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chws_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW leaving temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chwr_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW entering temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cwe_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Condenser water entering",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cwl_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Condenser water leaving",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "capacity_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Available capacity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Chiller 01"
+    },
+    {
+     "name": "CH_02",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "load_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Evaporator load",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "plr_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Part-load ratio",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cop",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "-",
+       "formatString": "#,##0.00",
+       "documentation": "COP",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Compressor power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chws_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW leaving temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chwr_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW entering temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cwe_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Condenser water entering",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cwl_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Condenser water leaving",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "capacity_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Available capacity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Chiller 02"
+    },
+    {
+     "name": "P_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "head_kpa",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kPa",
+       "formatString": "#,##0.0",
+       "documentation": "Differential head",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Shaft power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "eff_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Hydraulic efficiency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Vibration (RMS)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Motor current",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CHW pump 01 (duty)"
+    },
+    {
+     "name": "P_02",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "head_kpa",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kPa",
+       "formatString": "#,##0.0",
+       "documentation": "Differential head",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Shaft power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "eff_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Hydraulic efficiency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Vibration (RMS)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Motor current",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CHW pump 02 (duty)"
+    },
+    {
+     "name": "P_03",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "head_kpa",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kPa",
+       "formatString": "#,##0.0",
+       "documentation": "Differential head",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "power_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Shaft power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "eff_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Hydraulic efficiency",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "vib_mms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "mm/s",
+       "formatString": "#,##0.00",
+       "documentation": "Vibration (RMS)",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "current_a",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "A",
+       "formatString": "#,##0.0",
+       "documentation": "Motor current",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "CHW pump 03 (standby)"
+    },
+    {
+     "name": "HX_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "duty_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Heat duty",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "effectiveness_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Effectiveness",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_in_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW in",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "chw_out_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CHW out",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cw_in_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CW in",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "cw_out_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "CW out",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "ua_kwk",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW/K",
+       "formatString": "#,##0.00",
+       "documentation": "Effective UA",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Waterside economiser HX"
+    },
+    {
+     "name": "CT_01",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "leaving_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Leaving water",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "entering_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Entering water",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_rej_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Heat rejection",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "approach_k",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "K",
+       "formatString": "#,##0.00",
+       "documentation": "Approach",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "wetbulb_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Ambient wet-bulb",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Cooling tower 01"
+    },
+    {
+     "name": "CT_02",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "fan_speed_pct",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "%",
+       "formatString": "#,##0.0",
+       "documentation": "Fan speed",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "leaving_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Leaving water",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "entering_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Entering water",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "heat_rej_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.0",
+       "documentation": "Heat rejection",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "fan_kw",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "kW",
+       "formatString": "#,##0.00",
+       "documentation": "Fan power",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "approach_k",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "K",
+       "formatString": "#,##0.00",
+       "documentation": "Approach",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "wetbulb_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Ambient wet-bulb",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      },
+      {
+       "name": "Health",
+       "tagType": "Folder",
+       "tags": [
+        {
+         "name": "hi",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "prob",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "rul_h",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "Float8"
+        },
+        {
+         "name": "fault",
+         "tagType": "AtomicTag",
+         "valueSource": "memory",
+         "dataType": "String"
+        }
+       ]
+      }
+     ],
+     "documentation": "Cooling tower 02"
+    },
+    {
+     "name": "PIPE_CHWS",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "velocity_ms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m/s",
+       "formatString": "#,##0.00",
+       "documentation": "Mean velocity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Chilled-water supply"
+    },
+    {
+     "name": "PIPE_CHWR",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "velocity_ms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m/s",
+       "formatString": "#,##0.00",
+       "documentation": "Mean velocity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Chilled-water return"
+    },
+    {
+     "name": "PIPE_CW",
+     "tagType": "Folder",
+     "tags": [
+      {
+       "name": "flow_ls",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "L/s",
+       "formatString": "#,##0.00",
+       "documentation": "Flow",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "temp_c",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "°C",
+       "formatString": "#,##0.00",
+       "documentation": "Temperature",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "velocity_ms",
+       "tagType": "AtomicTag",
+       "dataType": "Float8",
+       "engUnit": "m/s",
+       "formatString": "#,##0.00",
+       "documentation": "Mean velocity",
+       "historyEnabled": true,
+       "historyProvider": "DCX_Historian",
+       "historicalDeadband": 0.0,
+       "valueSource": "memory",
+       "value": 0.0
+      },
+      {
+       "name": "State",
+       "tagType": "AtomicTag",
+       "dataType": "String",
+       "valueSource": "memory",
+       "value": ""
+      }
+     ],
+     "documentation": "Condenser water"
+    }
+   ]
+  },
+  {
+   "name": "System",
+   "tagType": "Folder",
+   "tags": [
+    {
+     "name": "Seq",
+     "tagType": "AtomicTag",
+     "dataType": "Int8",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Sim_Time_s",
+     "tagType": "AtomicTag",
+     "dataType": "Float8",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Sim_Clock",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Source",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Comm_plant",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Comm_ai",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Comm_historian",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Comm_opcua",
+     "tagType": "AtomicTag",
+     "dataType": "String",
+     "valueSource": "memory"
+    },
+    {
+     "name": "Last_Poll_OK",
+     "tagType": "AtomicTag",
+     "dataType": "Boolean",
+     "valueSource": "memory"
+    }
+   ]
+  }
+ ]
+}

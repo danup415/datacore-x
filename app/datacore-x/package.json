@@ -1,0 +1,15 @@
+{
+  "name": "datacore-x-3d-twin",
+  "version": "1.0.0",
+  "description": "DATACORE-X interactive 3D digital twin frontend",
+  "scripts": {
+    "build": "python tools/build.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "three": "^0.170.0"
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DATACORE-X · Interactive 3D Digital Twin</title>
+<style>
+:root{--bg:#0b0f14;--panel:#0f141a;--panel2:#141a21;--line:#222a33;--txt:#d6dde5;--mut:#8b949e;--acc:#39d0ff;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--crit:#ff3b30;--info:#58a6ff;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);font:12px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+button{font:inherit;color:var(--txt);background:#1b232c;border:1px solid #2d3743;border-radius:5px;padding:4px 9px;cursor:pointer}
+button:hover{border-color:var(--acc)}button.pri{background:#0f3a52;border-color:#1f6f99}button.warn{background:#4a2b0d;border-color:#8a5a1a}button:disabled{opacity:.45;cursor:not-allowed}
+select,input{font:inherit;color:var(--txt);background:#0b1016;border:1px solid #2d3743;border-radius:4px;padding:3px 5px}
+#app{display:grid;grid-template-rows:46px 1fr;grid-template-columns:250px 1fr 380px;height:100%}
+#top{grid-column:1/4;display:flex;align-items:center;gap:14px;padding:0 12px;border-bottom:1px solid var(--line);background:linear-gradient(#10161d,#0c1116)}
+.brand{font-weight:700;letter-spacing:.06em;font-size:14px}.brand small{display:block;font-weight:400;color:var(--mut);letter-spacing:0;font-size:10px}
+.badge{padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:600;border:1px solid}
+.b-live{color:#7ee787;border-color:#2ea04366;background:#2ea04318}.b-replay{color:#d2a8ff;border-color:#8957e566;background:#8957e518}.b-scen{color:#ffa657;border-color:#db6d2866;background:#db6d2822}
+#kpis{display:flex;gap:4px;margin-left:auto;flex-wrap:nowrap}
+.kpi{padding:3px 9px;border-left:1px solid var(--line);min-width:72px}.kpi b{display:block;font:600 14px var(--mono)}.kpi span{color:var(--mut);font-size:10px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+#link{font:11px var(--mono);white-space:nowrap}
+#left,#right{background:var(--panel);overflow:auto}#left{border-right:1px solid var(--line)}#right{border-left:1px solid var(--line);display:flex;flex-direction:column}
+.sec{border-bottom:1px solid var(--line);padding:8px 10px}.sec h4{margin:0 0 6px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+#tree ul{list-style:none;margin:0;padding-left:12px}#tree>ul{padding-left:0}#tree li>div{padding:2px 4px;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+#tree li>div:hover{background:#1a222b}#tree li>div.sel{background:#0f3a52}.tw{width:12px;color:var(--mut);display:inline-block;text-align:center}.hi-chip{margin-left:auto;font:10px var(--mono);padding:0 4px;border-radius:3px}
+.lyr label{display:flex;gap:6px;align-items:center;padding:2px 0;cursor:pointer}
+.vbtns{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+#viewport{position:relative;overflow:hidden}#viewport canvas{display:block}
+.css2d{position:absolute;top:0;left:0;pointer-events:none}
+.lbl{font:10px var(--mono);background:#0d1117cc;border:1px solid #30363d;border-radius:3px;padding:1px 4px;color:#c9d1d9;white-space:nowrap;transform:translateY(-6px)}
+.lbl b{color:#f0f6fc;margin-right:4px}.lbl.alarm{border-color:#f85149}.lbl.sel{border-color:var(--acc);color:#fff}.lbl.stale{opacity:.45;text-decoration:line-through}
+.room-lbl{font:600 11px system-ui;color:#7d8fa5;letter-spacing:.05em;text-transform:uppercase;text-shadow:0 1px 2px #000}
+#banner{position:absolute;top:10px;left:50%;transform:translateX(-50%);padding:6px 14px;border-radius:6px;font-weight:600;display:none;z-index:5}
+#banner.stale{display:block;background:#5a1d1d;border:1px solid #f85149;color:#ffd7d5}#banner.scen{display:block;background:#4a2b0d;border:1px solid #db6d28;color:#ffdfb6}
+#srcline{position:absolute;left:10px;bottom:8px;font:10.5px var(--mono);color:#8b949e;background:#0d1117cc;padding:3px 7px;border-radius:4px;max-width:60%}
+#legend{position:absolute;right:10px;bottom:8px;background:#0d1117dd;border:1px solid var(--line);border-radius:5px;padding:6px 8px;font-size:10px;width:210px}
+#legend .ramp{height:9px;border-radius:2px;background:linear-gradient(90deg,#214cd9 0%,#1aa6f2 16%,#33cc73 33%,#f2d933 50%,#fa801f 71%,#d91f1f 100%)}
+#legend .ticks{display:flex;justify-content:space-between;color:var(--mut);font-family:var(--mono)}
+#tooltip{position:absolute;pointer-events:none;background:#0d1117ee;border:1px solid #30363d;border-radius:5px;padding:5px 8px;font-size:11px;display:none;z-index:6;max-width:260px}
+#timeline{position:absolute;left:10px;right:230px;bottom:34px;background:#0d1117ee;border:1px solid #30363d;border-radius:6px;padding:6px 10px;display:none;align-items:center;gap:8px;z-index:5}
+#timeline input[type=range]{flex:1}
+#hint{position:absolute;top:10px;left:10px;font-size:10.5px;color:#8b949e;background:#0d1117aa;padding:4px 8px;border-radius:4px}
+.tabs{display:flex;border-bottom:1px solid var(--line);background:var(--panel2);position:sticky;top:0;z-index:2}.tabs button{flex:1;border:0;border-radius:0;background:none;padding:9px 4px;color:var(--mut);border-bottom:2px solid transparent}
+.tabs button.on{color:var(--txt);border-bottom-color:var(--acc)}.tabs .cnt{background:#da3633;color:#fff;border-radius:8px;padding:0 5px;font-size:10px;margin-left:3px}
+.tab{display:none;overflow:auto;flex:1}.tab.on{display:block}
+table{border-collapse:collapse;width:100%}td,th{padding:3px 5px;border-bottom:1px solid #1b222a;text-align:left;vertical-align:middle}th{color:var(--mut);font-weight:500;font-size:10.5px}
+td.num{font-family:var(--mono);text-align:right;white-space:nowrap}canvas.spk{width:70px;height:16px;display:block}
+.pill{display:inline-block;padding:1px 7px;border-radius:9px;font-size:10.5px;font-weight:600;color:#0d1117}
+.hcard{display:grid;grid-template-columns:74px 1fr;gap:8px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:8px;margin-top:6px}
+.hring{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font:700 19px var(--mono)}
+.mut{color:var(--mut)}.small{font-size:10.5px}.mono{font-family:var(--mono)}.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.al{padding:6px 8px;border-left:3px solid;margin:4px 0;background:var(--panel2);border-radius:0 4px 4px 0;cursor:pointer}.al.unack{animation:bl 1s infinite}
+@keyframes bl{50%{background:#2a1416}}
+.q-bad{color:var(--bad)}.worse{color:#ff7b72}.better{color:#7ee787}
+details summary{cursor:pointer;color:var(--mut);margin:6px 0}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:8px;margin:6px 0}
+.chk{font-family:var(--mono);font-size:11px}.chk .p{color:var(--ok)}.chk .f{color:var(--bad)}
+.chartbox{width:100%;height:150px}
+body.embed #app{grid-template-columns:0 1fr 340px}body.embed #left{display:none}
+/* embed=bare: viewport only, for SCADA dashboards (Ignition Perspective iframe) */
+body.bare #app{grid-template-rows:1fr;grid-template-columns:1fr}body.bare #viewport{grid-row:1;grid-column:1}body.bare #top,body.bare #left,body.bare #right,body.bare #hint{display:none}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="top">
+    <div class="brand">DATACORE-X<small>Interactive 3D digital twin · reference facility</small></div>
+    <span id="src-badge" class="badge b-live">LIVE</span>
+    <div id="clock" class="mono">—</div>
+    <div id="link"><span class="dot" style="background:#6e7681"></span>connecting…</div>
+    <div id="kpis"></div>
+    <label class="small mut">Role <select id="role"><option>viewer</option><option selected>operator</option><option>engineer</option></select></label>
+  </div>
+  <div id="left">
+    <div class="sec"><h4>Views</h4><div class="vbtns" id="views"></div></div>
+    <div class="sec"><h4>Layers</h4><div class="lyr" id="layers"></div>
+      <div class="row small" style="margin-top:6px">Heatmap plane <input id="hm-h" type="range" min="0.03" max="3.0" step="0.05" value="0.03" style="width:90px"><span id="hm-hv" class="mono">floor</span></div>
+    </div>
+    <div class="sec"><h4>Equipment hierarchy</h4><div id="tree"></div></div>
+  </div>
+  <div id="viewport">
+    <div id="hint">Drag: orbit · Right-drag: pan · Wheel: zoom · Click: select · Double-click: focus · Walk mode: WASD/QE, Shift run, Esc exit</div>
+    <div id="banner"></div>
+    <div id="tooltip"></div>
+    <div id="timeline"></div>
+    <div id="srcline"></div>
+    <div id="legend"><div class="row" style="justify-content:space-between"><span>Temperature (°C)</span><span class="mut" id="hm-n"></span></div><div class="ramp"></div><div class="ticks"><span>16</span><span>24</span><span>28</span><span>33</span><span>40</span></div>
+      <div class="mut" style="margin-top:3px">Heatmap = IDW interpolation of the 1.2 m virtual-sensor layer (not CFD)</div></div>
+  </div>
+  <div id="right">
+    <div class="tabs" id="tabs"><button data-t="asset" class="on">Asset</button><button data-t="alarms">Alarms<span class="cnt" id="al-cnt" style="display:none"></span></button><button data-t="whatif">What-if</button><button data-t="diag">Diagnostics</button></div>
+    <div class="tab on" id="tab-asset"></div>
+    <div class="tab" id="tab-alarms"></div>
+    <div class="tab" id="tab-whatif"></div>
+    <div class="tab" id="tab-diag"></div>
+  </div>
+</div>
+<!--DCX_REPLAY-->
+<script src="dist/app.js?v=20261110b"></script>
+</body>
+</html>
